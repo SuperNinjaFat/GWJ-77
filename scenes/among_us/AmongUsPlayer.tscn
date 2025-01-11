@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://scenes/among_us/among_us_player.gd" id="1_d6e56"]
 [ext_resource type="Texture2D" uid="uid://c8kr2vf0avj6g" path="res://scenes/among_us/worm_baby.png" id="2_7yyeu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ciw8h"]
-size = Vector2(169, 103)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ikfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcq0y"]
 atlas = ExtResource("2_7yyeu")
@@ -89,15 +88,16 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="AmongUsPlayer" type="CharacterBody3D"]
 script = ExtResource("1_d6e56")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 2.5)
-shape = SubResource("RectangleShape2D_ciw8h")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_5ikfn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.51563, 1.51563)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 0, 0.660087, 0)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_tjqpm")
 animation = &"idle"
-frame_progress = 0.973344
+frame_progress = 0.995616
