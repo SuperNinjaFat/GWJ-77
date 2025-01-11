@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://b06vknfi18ksg"]
+
+[ext_resource type="Script" path="res://battle/skill.gd" id="1_qvbon"]
+
+[resource]
+script = ExtResource("1_qvbon")
+display_name = "Attack"
+cost = 0
+attack_flag = true
+damage = 5
+attack_mod = 1.0
+defense_mod = 1.0
