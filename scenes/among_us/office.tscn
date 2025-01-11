@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxdr3xgtkufg2"]
+
+[ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_mw2ad"]
+[ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/among_us/AmongUsPlayer.tscn" id="2_m37gd"]
+
+[node name="Office" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(12.9375, 12.9375)
+texture = ExtResource("1_mw2ad")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_m37gd")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
