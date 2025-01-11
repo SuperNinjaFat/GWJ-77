@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8kr2vf0avj6g"
-path.s3tc="res://.godot/imported/worm_baby.png-7f2e223db9c00647732f8afc32b1ab2e.s3tc.ctex"
-path.etc2="res://.godot/imported/worm_baby.png-7f2e223db9c00647732f8afc32b1ab2e.etc2.ctex"
+path.s3tc="res://.godot/imported/worm_baby.png-14d020e51289b12267d922da8380df04.s3tc.ctex"
+path.etc2="res://.godot/imported/worm_baby.png-14d020e51289b12267d922da8380df04.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/among_us/worm_baby.png"
-dest_files=["res://.godot/imported/worm_baby.png-7f2e223db9c00647732f8afc32b1ab2e.s3tc.ctex", "res://.godot/imported/worm_baby.png-7f2e223db9c00647732f8afc32b1ab2e.etc2.ctex"]
+source_file="res://scenes/overworld/worm_baby.png"
+dest_files=["res://.godot/imported/worm_baby.png-14d020e51289b12267d922da8380df04.s3tc.ctex", "res://.godot/imported/worm_baby.png-14d020e51289b12267d922da8380df04.etc2.ctex"]
 
 [params]
 

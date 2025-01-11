@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxdr3xgtkufg2"]
 
-[ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_mw2ad"]
-[ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/among_us/AmongUsPlayer.tscn" id="2_m37gd"]
+[ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
+[ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
 
 [node name="Office" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -100, 0, 100, -4.37114e-06, 0, 0, 0)
 sorting_offset = -1.0
-texture = ExtResource("1_mw2ad")
+texture = ExtResource("1_wo4ex")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_m37gd")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_0tn4t")]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody2D"]
 transform = Transform3D(1, 0, 0, 0, 0.726431, 0.68724, 0, -0.68724, 0.726431, 0, 8.16328, 6.96713)
