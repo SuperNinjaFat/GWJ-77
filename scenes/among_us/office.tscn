@@ -6,7 +6,7 @@
 [node name="Office" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(12.9375, 12.9375)
+scale = Vector2(29, 29)
 texture = ExtResource("1_mw2ad")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_m37gd")]

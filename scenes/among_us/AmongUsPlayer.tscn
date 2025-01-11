@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8kr2vf0avj6g" path="res://scenes/among_us/worm_baby.png" id="2_7yyeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciw8h"]
-size = Vector2(42, 28)
+size = Vector2(169, 103)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcq0y"]
 atlas = ExtResource("2_7yyeu")
@@ -93,11 +93,11 @@ animations = [{
 script = ExtResource("1_d6e56")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_ciw8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.390625, 0.390625)
+scale = Vector2(1.51563, 1.51563)
 sprite_frames = SubResource("SpriteFrames_tjqpm")
 animation = &"idle"
-frame_progress = 0.736779
+frame_progress = 0.973344
