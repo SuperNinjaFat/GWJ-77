@@ -9,6 +9,7 @@ func _physics_process(delta):
     else:
         get_node("AnimatedSprite2D").play("idle")
 
+    # apply velocity with movement
     if Input.is_action_pressed("ui_right"):
         velocity.x = SPEED
         get_node("AnimatedSprite2D").flip_h = false
@@ -18,13 +19,14 @@ func _physics_process(delta):
     else:
         velocity.x = 0
     
-    velocity.y = velocity.y
+    # velocity.y = velocity.y
 
     if Input.is_action_pressed("ui_up"):
-        velocity.y = SPEED
-    elif Input.is_action_pressed("ui_left"):
         velocity.y = -SPEED
+    elif Input.is_action_pressed("ui_down"):
+        velocity.y = SPEED
     else:
         velocity.y = 0
     ## Godot 3:
     #velocity = move_and_slide(velocity, Vector2.UP)
+    move_and_slide()
