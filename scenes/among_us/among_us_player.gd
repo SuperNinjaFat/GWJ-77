@@ -3,10 +3,18 @@ extends CharacterBody2D
 const SPEED = 450
 
 func _physics_process(delta):
+    # animate
+    if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down"):
+        get_node("AnimatedSprite2D").play("move")
+    else:
+        get_node("AnimatedSprite2D").play("idle")
+
     if Input.is_action_pressed("ui_right"):
         velocity.x = SPEED
+        get_node("AnimatedSprite2D").flip_h = false
     elif Input.is_action_pressed("ui_left"):
         velocity.x = -SPEED
+        get_node("AnimatedSprite2D").flip_h = true
     else:
         velocity.x = 0
     
