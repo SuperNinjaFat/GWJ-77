@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8b81uuhrmpth"
-path.s3tc="res://.godot/imported/tex_cubicle_small_BaseColor.png-46f91d4c1b34c5202840c4c2d1a4c889.s3tc.ctex"
-path.etc2="res://.godot/imported/tex_cubicle_small_BaseColor.png-46f91d4c1b34c5202840c4c2d1a4c889.etc2.ctex"
+path.s3tc="res://.godot/imported/tex_cubicle_BaseColor.png-7200c86f4967c1a61ae8876b01e2c057.s3tc.ctex"
+path.etc2="res://.godot/imported/tex_cubicle_BaseColor.png-7200c86f4967c1a61ae8876b01e2c057.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/office/cubicle_small/tex_cubicle_small_BaseColor.png"
-dest_files=["res://.godot/imported/tex_cubicle_small_BaseColor.png-46f91d4c1b34c5202840c4c2d1a4c889.s3tc.ctex", "res://.godot/imported/tex_cubicle_small_BaseColor.png-46f91d4c1b34c5202840c4c2d1a4c889.etc2.ctex"]
+source_file="res://assets/models/office/cubicle/tex_cubicle_BaseColor.png"
+dest_files=["res://.godot/imported/tex_cubicle_BaseColor.png-7200c86f4967c1a61ae8876b01e2c057.s3tc.ctex", "res://.godot/imported/tex_cubicle_BaseColor.png-7200c86f4967c1a61ae8876b01e2c057.etc2.ctex"]
 
 [params]
 
