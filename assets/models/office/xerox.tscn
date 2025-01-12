@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq50dart457xo"]
+
+[ext_resource type="Material" uid="uid://dywwi2pc5o2ep" path="res://assets/models/office/xerox/xerox_material.tres" id="1_4nphr"]
+[ext_resource type="ArrayMesh" uid="uid://dqwx321ives27" path="res://assets/models/office/xerox/xerox.obj" id="2_mx8rh"]
+
+[node name="Xerox" type="Node3D"]
+
+[node name="Xerox" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_4nphr")
+mesh = ExtResource("2_mx8rh")
