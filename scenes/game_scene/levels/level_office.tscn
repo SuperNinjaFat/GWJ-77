@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=4 format=3 uid="uid://cxdr3xgtkufg2"]
 
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
 
 [node name="Office" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -100, 0, 100, -4.37114e-06, 0, 0, 0)
+visible = false
 sorting_offset = -1.0
 texture = ExtResource("1_wo4ex")
 
@@ -14,3 +17,10 @@ texture = ExtResource("1_wo4ex")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody2D"]
 transform = Transform3D(1, 0, 0, 0, 0.726431, 0.68724, 0, -0.68724, 0.726431, 0, 8.16328, 6.96713)
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.99997, 0.0221452, -0.00568501, -0.0221451, 9.99998, 0.000160103, 0.00568535, -0.000147471, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5bs6c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.911948, 0, -0.410305, 0.361159, 0.474564, 0.802716, 0.194716, -0.880221, 0.432778, 0, 9.78683, 0)
