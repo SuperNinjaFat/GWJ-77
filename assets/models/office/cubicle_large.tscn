@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://tgxfgfhsqr66"]
+
+[ext_resource type="Material" uid="uid://drfrbqv7lamal" path="res://assets/models/office/cubicle/cubicle_material.tres" id="1_rdq46"]
+[ext_resource type="ArrayMesh" uid="uid://lrxvjf80fxv8" path="res://assets/models/office/cubicle/cubicle_large.obj" id="2_ecnwn"]
+
+[node name="CubicleLarge" type="Node3D"]
+
+[node name="CubicleLarge" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_rdq46")
+mesh = ExtResource("2_ecnwn")
