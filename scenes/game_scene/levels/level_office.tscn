@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=8 format=3 uid="uid://cxdr3xgtkufg2"]
 
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_manager.gd" id="3_rgpln"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_point.gd" id="4_qi448"]
+[ext_resource type="Texture2D" uid="uid://xun8l10gt2s" path="res://scenes/overworld/tasks/waterbucket.png" id="5_mchw2"]
+[ext_resource type="Texture2D" uid="uid://focwgd08gksy" path="res://scenes/overworld/tasks/special_snowman.png" id="6_il6u7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
 
@@ -13,9 +17,9 @@ visible = false
 sorting_offset = -1.0
 texture = ExtResource("1_wo4ex")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_0tn4t")]
+[node name="Player" parent="." instance=ExtResource("2_0tn4t")]
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody2D"]
+[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.726431, 0.68724, 0, -0.68724, 0.726431, 0, 8.16328, 6.96713)
 
 [node name="GroundPlane" type="MeshInstance3D" parent="."]
@@ -24,3 +28,25 @@ mesh = SubResource("PlaneMesh_5bs6c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.911948, 0, -0.410305, 0.361159, 0.474564, 0.802716, 0.194716, -0.880221, 0.432778, 0, 9.78683, 0)
+
+[node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("task_points")]
+script = ExtResource("3_rgpln")
+task_points = [NodePath("../Test TaskPoint 1"), NodePath("../Test TaskPoint 2")]
+
+[node name="Test TaskPoint 1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11309, 0, -5.01353)
+script = ExtResource("4_qi448")
+
+[node name="Sprite3D" type="Sprite3D" parent="Test TaskPoint 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72331, 0)
+billboard = 2
+texture = ExtResource("5_mchw2")
+
+[node name="Test TaskPoint 2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36095, 0, -5.01353)
+script = ExtResource("4_qi448")
+
+[node name="Sprite3D" type="Sprite3D" parent="Test TaskPoint 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72331, 0)
+billboard = 2
+texture = ExtResource("6_il6u7")
