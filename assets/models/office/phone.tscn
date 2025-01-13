@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwl7pygoo30rr"]
+
+[ext_resource type="ArrayMesh" uid="uid://ofxx7tqia3up" path="res://assets/models/office/phone/phone.obj" id="1_dixhw"]
+[ext_resource type="Material" uid="uid://ylh5iueyi6df" path="res://assets/models/office/phone/phone_material.tres" id="1_gpowh"]
+
+[node name="Phone" type="MeshInstance3D"]
+
+[node name="Phone" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_gpowh")
+mesh = ExtResource("1_dixhw")

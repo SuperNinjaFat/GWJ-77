@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=8 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
 [ext_resource type="PackedScene" uid="uid://b7b1blldipq7b" path="res://assets/models/office/filing_cabinet.tscn" id="3_bf4lv"]
 [ext_resource type="PackedScene" uid="uid://bq50dart457xo" path="res://assets/models/office/xerox.tscn" id="4_f6k1s"]
 [ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
+[ext_resource type="PackedScene" uid="uid://cwl7pygoo30rr" path="res://assets/models/office/phone.tscn" id="6_0fkaq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -41,3 +42,6 @@ transform = Transform3D(0.998978, 0, 0.0451886, 0, 1, 0, -0.0451886, 0, 0.998978
 
 [node name="OblongTable" parent="." instance=ExtResource("5_8qiwu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.48856, 9.53674e-07, 1.46702)
+
+[node name="Phone" parent="." instance=ExtResource("6_0fkaq")]
+transform = Transform3D(0.844618, 0, 0.53537, 0, 1, 0, -0.53537, 0, 0.844618, 4.34558, 0.823056, 2.25715)
