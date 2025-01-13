@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6n7qn3ccswh"]
+
+[ext_resource type="Material" uid="uid://cb25uv4epl76a" path="res://assets/models/office/water_cooler/waterCooler_material.tres" id="1_b2nc7"]
+[ext_resource type="ArrayMesh" uid="uid://dhxxcxvcy4fpk" path="res://assets/models/office/water_cooler/waterJug.obj" id="2_0npf8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3a8d"]
+size = Vector3(0.311951, 0.428589, 0.308838)
+
+[node name="WaterJug" type="MeshInstance3D"]
+material_override = ExtResource("1_b2nc7")
+mesh = ExtResource("2_0npf8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000152588, 0.214172, 0.000366211)
+shape = SubResource("BoxShape3D_t3a8d")
