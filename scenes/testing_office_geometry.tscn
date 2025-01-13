@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgucry3o6nav2"]
+
+[ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
+[ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
+[ext_resource type="PackedScene" uid="uid://b7b1blldipq7b" path="res://assets/models/office/filing_cabinet.tscn" id="3_bf4lv"]
+[ext_resource type="PackedScene" uid="uid://bq50dart457xo" path="res://assets/models/office/xerox.tscn" id="4_f6k1s"]
+[ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
+
+[node name="OfficeGeometry" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 0.183013, -0.183013, 0, 0.707107, 0.707107, 0.258819, -0.683013, 0.683013, 0, 5.25108, 0)
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_kc7l7")
+
+[node name="CubicleLarge" parent="." instance=ExtResource("1_4r0md")]
+
+[node name="CubicleSmall" parent="." instance=ExtResource("2_ha7oe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.285405, 0, 8.00477)
+
+[node name="CubicleSmall2" parent="CubicleSmall" instance=ExtResource("2_ha7oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09346, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="CubicleSmall3" parent="CubicleSmall" instance=ExtResource("2_ha7oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19572, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="FilingCabinet" parent="." instance=ExtResource("3_bf4lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381379, 0, 3.25863)
+
+[node name="FilingCabinet2" parent="." instance=ExtResource("3_bf4lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.870228, 0, 3.25863)
+
+[node name="Xerox" parent="." instance=ExtResource("4_f6k1s")]
+transform = Transform3D(0.998978, 0, 0.0451886, 0, 1, 0, -0.0451886, 0, 0.998978, 2.11611, 0, 3.33398)
+
+[node name="OblongTable" parent="." instance=ExtResource("5_8qiwu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.48856, 9.53674e-07, 1.46702)

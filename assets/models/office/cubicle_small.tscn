@@ -12,7 +12,7 @@ size = Vector3(2.11908, 1.60535, 0.158386)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jip7q"]
 size = Vector3(0.906128, 1.60059, 0.156494)
 
-[node name="MeshInstance3D" type="MeshInstance3D"]
+[node name="CubicleSmall" type="MeshInstance3D"]
 material_override = ExtResource("2_qs3i3")
 mesh = ExtResource("1_6qxb5")
 

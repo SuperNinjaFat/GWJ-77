@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddltcw6qrvtev"]
+
+[ext_resource type="Material" uid="uid://dlknn4cm1dg0l" path="res://assets/models/office/oblong_table/oblongTable_material.tres" id="1_yustf"]
+[ext_resource type="ArrayMesh" uid="uid://b7coosmrieqrr" path="res://assets/models/office/oblong_table/oblongTable.obj" id="2_cyy3x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uj2eg"]
+size = Vector3(1.78632, 0.821304, 1.12244)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xv13c"]
+height = 0.816307
+radius = 0.560681
+
+[node name="OblongTable" type="MeshInstance3D"]
+material_override = ExtResource("1_yustf")
+mesh = ExtResource("2_cyy3x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="box_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00576782, 0.408745, -0.00372314)
+shape = SubResource("BoxShape3D_uj2eg")
+
+[node name="cylinder1_CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.730789, 0.401485, -0.00176891)
+shape = SubResource("CylinderShape3D_xv13c")
+
+[node name="cylinder2_CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.733845, 0.401485, -0.00176891)
+shape = SubResource("CylinderShape3D_xv13c")
