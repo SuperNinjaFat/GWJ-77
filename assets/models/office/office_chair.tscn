@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvbsh71rce7w3"]
+
+[ext_resource type="Material" uid="uid://i2p12an8w3uw" path="res://assets/models/office/office_chair/officeChair_material.tres" id="1_lttdn"]
+[ext_resource type="ArrayMesh" uid="uid://c2kcxke5o6a0c" path="res://assets/models/office/office_chair/officeChair.obj" id="2_n7log"]
+
+[node name="OfficeChair" type="MeshInstance3D"]
+
+[node name="OfficeChair" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_lttdn")
+mesh = ExtResource("2_n7log")
