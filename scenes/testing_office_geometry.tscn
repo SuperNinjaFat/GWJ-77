@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=16 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ih7dguxv2wf" path="res://assets/models/office/waste_bin.tscn" id="11_w22gq"]
 [ext_resource type="PackedScene" uid="uid://d0bamdt3npiw1" path="res://assets/models/office/water_cooler.tscn" id="12_vnwu8"]
 [ext_resource type="PackedScene" uid="uid://b6n7qn3ccswh" path="res://assets/models/office/water_jug.tscn" id="13_swdni"]
+[ext_resource type="PackedScene" uid="uid://mjpdmx6yif56" path="res://assets/models/office/computer.tscn" id="14_pcc23"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -86,3 +87,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.322
 
 [node name="WaterJug" parent="." instance=ExtResource("13_swdni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254, 0, 2.17007)
+
+[node name="Computer" parent="." instance=ExtResource("14_pcc23")]
+transform = Transform3D(0.0052534, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.0052534, 4.34357, 0.819398, 1.74276)
