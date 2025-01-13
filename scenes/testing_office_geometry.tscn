@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=11 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
 [ext_resource type="PackedScene" uid="uid://cwl7pygoo30rr" path="res://assets/models/office/phone.tscn" id="6_0fkaq"]
 [ext_resource type="PackedScene" uid="uid://cvbsh71rce7w3" path="res://assets/models/office/office_chair.tscn" id="7_pbs40"]
+[ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/office_chair/officeChair_grey_material.tres" id="8_s1mh1"]
+[ext_resource type="Material" uid="uid://diddqety08t8c" path="res://assets/models/office/office_chair/officeChair_navy_material.tres" id="9_ccah1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -49,18 +51,22 @@ transform = Transform3D(0.844618, 0, 0.53537, 0, 1, 0, -0.53537, 0, 0.844618, 4.
 
 [node name="OfficeChair" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(0.692194, 0, -0.721712, 0, 1, 0, 0.721712, 0, 0.692194, 2.98584, 0, 6.93273)
+material_override = ExtResource("8_s1mh1")
 
 [node name="OfficeChair2" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(-0.997143, 0, -0.0755357, 0, 1, 0, 0.0755357, 0, -0.997143, 1.47873, 0, 0.872474)
+material_override = ExtResource("8_s1mh1")
 
 [node name="OfficeChair3" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(-0.997389, 0, 0.0722112, 0, 1, 0, -0.0722112, 0, -0.997389, 2.75454, 0, 0.872474)
+material_override = ExtResource("9_ccah1")
 
 [node name="OfficeChair4" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(0.997797, 0, 0.0663435, 0, 1, 0, -0.0663435, 0, 0.997797, 2.75454, 0, 2.1401)
 
 [node name="OfficeChair6" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(-0.157934, 0, -0.98745, 0, 1, 0, 0.98745, 0, -0.157934, 5.00144, 0, 1.95485)
+material_override = ExtResource("9_ccah1")
 
 [node name="OfficeChair5" parent="." instance=ExtResource("7_pbs40")]
 transform = Transform3D(0.999371, 0, -0.0354578, 0, 1, 0, 0.0354578, 0, 0.999371, 1.30006, 0, 2.27769)
