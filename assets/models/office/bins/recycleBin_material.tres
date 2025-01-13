@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cof5i21cxcyex"]
+
+[ext_resource type="Texture2D" uid="uid://qq2jj5unkfac" path="res://assets/models/office/bins/tex_recycle_bin_BaseColor.png" id="1_3fb28"]
+[ext_resource type="Texture2D" uid="uid://im0kyyii2kok" path="res://assets/models/office/bins/tex_recycle_bin_MRA.png" id="2_pbpsr"]
+
+[resource]
+albedo_texture = ExtResource("1_3fb28")
+roughness_texture = ExtResource("2_pbpsr")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_pbpsr")
+ao_texture_channel = 2

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://y4fqg6lciqh6"]
+
+[ext_resource type="Material" uid="uid://cof5i21cxcyex" path="res://assets/models/office/bins/recycleBin_material.tres" id="1_k7w0y"]
+[ext_resource type="ArrayMesh" uid="uid://bobwcaqv4hktu" path="res://assets/models/office/bins/bin.obj" id="2_pbnhh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0tnh"]
+size = Vector3(0.346924, 0.356506, 0.244141)
+
+[node name="RecycleBin" type="MeshInstance3D"]
+material_override = ExtResource("1_k7w0y")
+mesh = ExtResource("2_pbnhh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0.178375, 0)
+shape = SubResource("BoxShape3D_t0tnh")
