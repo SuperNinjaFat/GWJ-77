@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdvo8nu2nks1j"]
 
-[ext_resource type="ArrayMesh" uid="uid://efjyevcbgc7r" path="res://assets/models/office/cubicle/cubicle_small.obj" id="1_6qxb5"]
-[ext_resource type="Material" uid="uid://drfrbqv7lamal" path="res://assets/models/office/cubicle/cubicle_material.tres" id="2_qs3i3"]
+[ext_resource type="ArrayMesh" uid="uid://efjyevcbgc7r" path="res://assets/models/office/resources/cubicle/cubicle_small.obj" id="1_6qxb5"]
+[ext_resource type="Material" uid="uid://drfrbqv7lamal" path="res://assets/models/office/resources/cubicle/cubicle_material.tres" id="2_qs3i3"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tclo3"]
 size = Vector3(0.160767, 1.60031, 1.91296)

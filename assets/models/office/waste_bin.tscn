@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8ih7dguxv2wf"]
 
-[ext_resource type="Material" uid="uid://c1jywm2y7er2p" path="res://assets/models/office/bins/wasteBin_material.tres" id="1_gvh8h"]
-[ext_resource type="ArrayMesh" uid="uid://bobwcaqv4hktu" path="res://assets/models/office/bins/bin.obj" id="2_08vme"]
+[ext_resource type="Material" uid="uid://c1jywm2y7er2p" path="res://assets/models/office/resources/bins/wasteBin_material.tres" id="1_gvh8h"]
+[ext_resource type="ArrayMesh" uid="uid://bobwcaqv4hktu" path="res://assets/models/office/resources/bins/bin.obj" id="2_08vme"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wk2e6"]
 size = Vector3(0.342712, 0.356934, 0.247314)

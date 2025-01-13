@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn6x22rtly8hb"]
+
+[ext_resource type="Material" uid="uid://bpxswyidbswfj" path="res://assets/models/office/resources/microwave/microwave_material.tres" id="1_ekef8"]
+[ext_resource type="ArrayMesh" uid="uid://b2h4slf3yyi45" path="res://assets/models/office/resources/microwave/microwave.obj" id="2_xdp31"]
+[ext_resource type="PackedScene" uid="uid://cxvm2mjocxuwl" path="res://assets/models/office/microwave_door.tscn" id="3_df1mu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x356h"]
+size = Vector3(0.50885, 0.325134, 0.444214)
+
+[node name="Microwave" type="MeshInstance3D"]
+material_override = ExtResource("1_ekef8")
+mesh = ExtResource("2_xdp31")
+
+[node name="MicrowaveDoor" parent="." instance=ExtResource("3_df1mu")]
+editor_description = "Door opens to -105 degrees on thee Y Axis"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.168, 0.209)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00137329, 0.162506, 0.0272827)
+shape = SubResource("BoxShape3D_x356h")

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://b15rurpocuwwv"]
+
+[ext_resource type="Texture2D" uid="uid://b7vlpx2to5d44" path="res://assets/models/office/resources/filing_cabinet/tex_filingCabinet_BaseColor.png" id="1_bwr2t"]
+[ext_resource type="Texture2D" uid="uid://bkwrdtym6u8no" path="res://assets/models/office/resources/filing_cabinet/tex_filingCabinet_MRA.png" id="2_hihd5"]
+[ext_resource type="Texture2D" uid="uid://dbkcu42b7bbvf" path="res://assets/models/office/resources/filing_cabinet/tex_filingCabinet_Normal.png" id="3_vhvwd"]
+
+[resource]
+albedo_texture = ExtResource("1_bwr2t")
+metallic = 1.0
+metallic_texture = ExtResource("2_hihd5")
+roughness_texture = ExtResource("2_hihd5")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_vhvwd")
+ao_enabled = true
+ao_texture = ExtResource("2_hihd5")
+ao_texture_channel = 2

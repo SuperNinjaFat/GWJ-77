@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdi2ga2gr3ndc"]
-
-[ext_resource type="Material" uid="uid://b15rurpocuwwv" path="res://assets/models/office/filing_cabinet/filingCabinet_material.tres" id="1_81lk6"]
-[ext_resource type="ArrayMesh" uid="uid://po210j6wasdf" path="res://assets/models/office/filing_cabinet/filingCabinet_Drawer.obj" id="1_iyb1k"]
-
-[node name="Drawer" type="MeshInstance3D"]
-material_override = ExtResource("1_81lk6")
-mesh = ExtResource("1_iyb1k")

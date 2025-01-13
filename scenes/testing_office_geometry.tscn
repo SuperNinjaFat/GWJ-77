@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=17 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
 [ext_resource type="PackedScene" uid="uid://cwl7pygoo30rr" path="res://assets/models/office/phone.tscn" id="6_0fkaq"]
 [ext_resource type="PackedScene" uid="uid://cvbsh71rce7w3" path="res://assets/models/office/office_chair.tscn" id="7_pbs40"]
-[ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/office_chair/officeChair_grey_material.tres" id="8_s1mh1"]
-[ext_resource type="Material" uid="uid://diddqety08t8c" path="res://assets/models/office/office_chair/officeChair_navy_material.tres" id="9_ccah1"]
+[ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/resources/office_chair/officeChair_grey_material.tres" id="8_s1mh1"]
+[ext_resource type="Material" uid="uid://diddqety08t8c" path="res://assets/models/office/resources/office_chair/officeChair_navy_material.tres" id="9_ccah1"]
 [ext_resource type="PackedScene" uid="uid://y4fqg6lciqh6" path="res://assets/models/office/recycle_bin.tscn" id="10_6kpn3"]
 [ext_resource type="PackedScene" uid="uid://c8ih7dguxv2wf" path="res://assets/models/office/waste_bin.tscn" id="11_w22gq"]
 [ext_resource type="PackedScene" uid="uid://d0bamdt3npiw1" path="res://assets/models/office/water_cooler.tscn" id="12_vnwu8"]
 [ext_resource type="PackedScene" uid="uid://b6n7qn3ccswh" path="res://assets/models/office/water_jug.tscn" id="13_swdni"]
 [ext_resource type="PackedScene" uid="uid://mjpdmx6yif56" path="res://assets/models/office/computer.tscn" id="14_pcc23"]
+[ext_resource type="PackedScene" uid="uid://bn6x22rtly8hb" path="res://assets/models/office/microwave.tscn" id="15_mycsu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -90,3 +91,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254, 0, 2.17007)
 
 [node name="Computer" parent="." instance=ExtResource("14_pcc23")]
 transform = Transform3D(0.0052534, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.0052534, 4.34357, 0.819398, 1.74276)
+
+[node name="Microwave" parent="." instance=ExtResource("15_mycsu")]
+transform = Transform3D(0.328108, 0, 0.94464, 0, 1, 0, -0.94464, 0, 0.328108, 4.48847, 0.819398, 1.01194)

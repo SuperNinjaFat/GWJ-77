@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0bamdt3npiw1"]
 
-[ext_resource type="Material" uid="uid://cb25uv4epl76a" path="res://assets/models/office/water_cooler/waterCooler_material.tres" id="1_65gg8"]
-[ext_resource type="ArrayMesh" uid="uid://cpticyjlqkte8" path="res://assets/models/office/water_cooler/waterCooler.obj" id="2_c6pv8"]
+[ext_resource type="Material" uid="uid://cb25uv4epl76a" path="res://assets/models/office/resources/water_cooler/waterCooler_material.tres" id="1_65gg8"]
+[ext_resource type="ArrayMesh" uid="uid://cpticyjlqkte8" path="res://assets/models/office/resources/water_cooler/waterCooler.obj" id="2_c6pv8"]
 [ext_resource type="PackedScene" uid="uid://b6n7qn3ccswh" path="res://assets/models/office/water_jug.tscn" id="3_1qe2f"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgjir"]
 size = Vector3(0.353088, 0.998657, 0.387146)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://po210j6wasdf"
+path="res://.godot/imported/filingCabinet_Drawer.obj-94330f77a34d74c3b988b485e6a9a1c4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/filingCabinet_Drawer.obj-94330f77a34d74c3b988b485e6a9a1c4.mesh"]
+
+source_file="res://assets/models/office/resources/filing_cabinet/filingCabinet_Drawer.obj"
+dest_files=["res://.godot/imported/filingCabinet_Drawer.obj-94330f77a34d74c3b988b485e6a9a1c4.mesh", "res://.godot/imported/filingCabinet_Drawer.obj-94330f77a34d74c3b988b485e6a9a1c4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

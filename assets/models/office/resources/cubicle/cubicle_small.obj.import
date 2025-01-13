@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://efjyevcbgc7r"
+path="res://.godot/imported/cubicle_small.obj-33a075aef3f679975529b271a596f5fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cubicle_small.obj-33a075aef3f679975529b271a596f5fc.mesh"]
+
+source_file="res://assets/models/office/resources/cubicle/cubicle_small.obj"
+dest_files=["res://.godot/imported/cubicle_small.obj-33a075aef3f679975529b271a596f5fc.mesh", "res://.godot/imported/cubicle_small.obj-33a075aef3f679975529b271a596f5fc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

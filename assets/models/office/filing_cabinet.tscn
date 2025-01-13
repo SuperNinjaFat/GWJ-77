@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7b1blldipq7b"]
 
-[ext_resource type="Material" uid="uid://b15rurpocuwwv" path="res://assets/models/office/filing_cabinet/filingCabinet_material.tres" id="1_gipeu"]
-[ext_resource type="ArrayMesh" uid="uid://hx4j5lbyk2ej" path="res://assets/models/office/filing_cabinet/filingCabinet.obj" id="1_j3fv7"]
-[ext_resource type="PackedScene" uid="uid://cdi2ga2gr3ndc" path="res://assets/models/office/filing_cabinet/drawer.tscn" id="2_r0r6x"]
+[ext_resource type="Material" uid="uid://b15rurpocuwwv" path="res://assets/models/office/resources/filing_cabinet/filingCabinet_material.tres" id="1_gipeu"]
+[ext_resource type="ArrayMesh" uid="uid://hx4j5lbyk2ej" path="res://assets/models/office/resources/filing_cabinet/filingCabinet.obj" id="1_j3fv7"]
+[ext_resource type="PackedScene" uid="uid://cdi2ga2gr3ndc" path="res://assets/models/office/resources/filing_cabinet/drawer.tscn" id="2_r0r6x"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ep7cn"]
 size = Vector3(0.471252, 1.37006, 0.466675)
