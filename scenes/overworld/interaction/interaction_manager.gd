@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 # handle pressing interaction button
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") && can_interact:
-		print("area_size: ", active_areas.size())
+		# print("area_size: ", active_areas.size())
 		if active_areas.size() > 0:
 			can_interact = false
 			label.hide()

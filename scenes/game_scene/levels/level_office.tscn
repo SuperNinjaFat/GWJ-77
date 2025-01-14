@@ -29,7 +29,20 @@ transform = Transform3D(0.911948, 0, -0.410305, 0.361159, 0.474564, 0.802716, 0.
 
 [node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("task_points")]
 script = ExtResource("3_rgpln")
-task_points = [NodePath("../TaskPoint")]
+task_points = [NodePath("../TaskPoint"), NodePath("../TaskPoint2"), NodePath("../TaskPoint3"), NodePath("../TaskPoint4")]
 
 [node name="TaskPoint" parent="." instance=ExtResource("4_yqhrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70577, 0, -5.09813)
+task_types = Array[int]([1])
+
+[node name="TaskPoint2" parent="." instance=ExtResource("4_yqhrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34011, 0, -7.25638)
+task_types = Array[int]([2])
+
+[node name="TaskPoint3" parent="." instance=ExtResource("4_yqhrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.60286, 0, 2.76563)
+task_types = Array[int]([0])
+
+[node name="TaskPoint4" parent="." instance=ExtResource("4_yqhrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37484, 0, 2.83518)
+task_types = Array[int]([0])
