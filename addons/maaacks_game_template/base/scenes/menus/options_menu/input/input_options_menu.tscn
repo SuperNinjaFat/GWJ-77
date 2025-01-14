@@ -1,10 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp3rgqaehb3xu"]
+[gd_scene load_steps=10 format=3 uid="uid://dp3rgqaehb3xu"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_options_menu.gd" id="1"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="2_wft4x"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/key_assignment_dialog.gd" id="3_wsh2h"]
 [ext_resource type="PackedScene" uid="uid://bxp45814v6ydv" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_actions_list.tscn" id="4_lf2nw"]
 [ext_resource type="PackedScene" uid="uid://ci6wgl2ngd35n" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_actions_tree.tscn" id="5_b2whh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cgg1"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.976471, 0.945098, 0.647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jkpb"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.658824, 0.658824, 0.658824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n85va"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjv3a"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.988235, 0.988235, 0.988235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="Controls" type="MarginContainer"]
 anchors_preset = 15
@@ -15,6 +61,7 @@ grow_vertical = 2
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_bottom = 24
 script = ExtResource("1")
+remapping_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -27,6 +74,7 @@ search_depth = 2
 [node name="InputMappingContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/InputMappingContainer"]
 layout_mode = 2
@@ -35,12 +83,22 @@ horizontal_alignment = 1
 
 [node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" instance=ExtResource("4_lf2nw")]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="InputActionsTree" parent="VBoxContainer/InputMappingContainer" instance=ExtResource("5_b2whh")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/InputMappingContainer"]
+custom_minimum_size = Vector2(450, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="InputActionsTree" parent="VBoxContainer/InputMappingContainer/ScrollContainer" instance=ExtResource("5_b2whh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InputMappingContainer"]
 layout_mode = 2
@@ -48,6 +106,13 @@ alignment = 1
 
 [node name="ResetButton" type="Button" parent="VBoxContainer/InputMappingContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_colors/font_pressed_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_8cgg1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jkpb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n85va")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjv3a")
 text = "Reset"
 
 [node name="KeyAssignmentDialog" type="ConfirmationDialog" parent="."]
@@ -66,7 +131,7 @@ anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0
-offset_bottom = -49.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -96,7 +161,7 @@ one_shot = true
 
 [node name="KeyDeletionDialog" type="ConfirmationDialog" parent="."]
 title = "Remove Key"
-size = Vector2i(419, 100)
+size = Vector2i(568, 100)
 dialog_text = "Are you sure you want to remove KEY from ACTION?"
 
 [node name="OneInputMinimumDialog" type="AcceptDialog" parent="."]
@@ -108,16 +173,16 @@ title = "Already Assigned"
 size = Vector2i(398, 100)
 
 [node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
-size = Vector2i(486, 100)
+size = Vector2i(688, 100)
 dialog_text = "Are you sure you want to reset controls back to the defaults?"
 
 [connection signal="already_assigned" from="VBoxContainer/InputMappingContainer/InputActionsList" to="." method="_on_input_actions_list_already_assigned"]
 [connection signal="button_clicked" from="VBoxContainer/InputMappingContainer/InputActionsList" to="." method="_on_input_actions_list_button_clicked"]
 [connection signal="minimum_reached" from="VBoxContainer/InputMappingContainer/InputActionsList" to="." method="_on_input_actions_list_minimum_reached"]
-[connection signal="add_button_clicked" from="VBoxContainer/InputMappingContainer/InputActionsTree" to="." method="_on_input_actions_tree_add_button_clicked"]
-[connection signal="already_assigned" from="VBoxContainer/InputMappingContainer/InputActionsTree" to="." method="_on_input_actions_tree_already_assigned"]
-[connection signal="minimum_reached" from="VBoxContainer/InputMappingContainer/InputActionsTree" to="." method="_on_input_actions_tree_minimum_reached"]
-[connection signal="remove_button_clicked" from="VBoxContainer/InputMappingContainer/InputActionsTree" to="." method="_on_input_actions_tree_remove_button_clicked"]
+[connection signal="add_button_clicked" from="VBoxContainer/InputMappingContainer/ScrollContainer/InputActionsTree" to="." method="_on_input_actions_tree_add_button_clicked"]
+[connection signal="already_assigned" from="VBoxContainer/InputMappingContainer/ScrollContainer/InputActionsTree" to="." method="_on_input_actions_tree_already_assigned"]
+[connection signal="minimum_reached" from="VBoxContainer/InputMappingContainer/ScrollContainer/InputActionsTree" to="." method="_on_input_actions_tree_minimum_reached"]
+[connection signal="remove_button_clicked" from="VBoxContainer/InputMappingContainer/ScrollContainer/InputActionsTree" to="." method="_on_input_actions_tree_remove_button_clicked"]
 [connection signal="pressed" from="VBoxContainer/InputMappingContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="confirmed" from="KeyAssignmentDialog" to="." method="_on_key_assignment_dialog_confirmed"]
 [connection signal="visibility_changed" from="KeyAssignmentDialog" to="KeyAssignmentDialog" method="_on_visibility_changed"]
