@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name OverworldPlayer
 
 const SPEED = 7.5
 

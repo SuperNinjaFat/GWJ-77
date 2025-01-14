@@ -88,7 +88,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="OverworldPlayer" type="CharacterBody3D"]
+[node name="OverworldPlayer" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_d6e56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
