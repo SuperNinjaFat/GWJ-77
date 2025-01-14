@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://mjpdmx6yif56"]
+[gd_scene load_steps=7 format=3 uid="uid://mjpdmx6yif56"]
 
-[ext_resource type="ArrayMesh" uid="uid://bij5xtbya4vuh" path="res://assets/models/office/computer/compaq_keyboard.obj" id="1_enngw"]
-[ext_resource type="Material" uid="uid://cppp8gb24nk8x" path="res://assets/models/office/computer/computer_material.tres" id="2_y68vx"]
-[ext_resource type="ArrayMesh" uid="uid://bgsvu5aicbg2u" path="res://assets/models/office/computer/compaq_monitor.obj" id="3_8pgfe"]
-[ext_resource type="ArrayMesh" uid="uid://dmxdgp0800d3v" path="res://assets/models/office/computer/compaq_mouse.obj" id="4_khfhp"]
-[ext_resource type="ArrayMesh" uid="uid://cubeg4v6e240g" path="res://assets/models/office/computer/compaq_tower.obj" id="5_d16qr"]
+[ext_resource type="ArrayMesh" uid="uid://bij5xtbya4vuh" path="res://assets/models/office/resources/computer/compaq_keyboard.obj" id="1_enngw"]
+[ext_resource type="Material" uid="uid://cppp8gb24nk8x" path="res://assets/models/office/resources/computer/computer_material.tres" id="2_y68vx"]
+[ext_resource type="ArrayMesh" uid="uid://bgsvu5aicbg2u" path="res://assets/models/office/resources/computer/compaq_monitor.obj" id="3_8pgfe"]
+[ext_resource type="ArrayMesh" uid="uid://dmxdgp0800d3v" path="res://assets/models/office/resources/computer/compaq_mouse.obj" id="4_khfhp"]
+[ext_resource type="ArrayMesh" uid="uid://cubeg4v6e240g" path="res://assets/models/office/resources/computer/compaq_tower.obj" id="5_d16qr"]
+
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeipx"]
+size = Vector3(0.406677, 0.541077, 0.311768)
 
 [node name="Computer" type="Node3D"]
 
@@ -26,3 +30,10 @@ mesh = ExtResource("4_khfhp")
 [node name="CompaqTower" type="MeshInstance3D" parent="."]
 mesh = ExtResource("5_d16qr")
 surface_material_override/0 = ExtResource("2_y68vx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.231752)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00131226, 0.270599, -0.249146)
+shape = SubResource("BoxShape3D_eeipx")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=18 format=3 uid="uid://bgucry3o6nav2"]
+
+[ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
+[ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
+[ext_resource type="PackedScene" uid="uid://b7b1blldipq7b" path="res://assets/models/office/filing_cabinet.tscn" id="3_bf4lv"]
+[ext_resource type="PackedScene" uid="uid://bq50dart457xo" path="res://assets/models/office/xerox.tscn" id="4_f6k1s"]
+[ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
+[ext_resource type="PackedScene" uid="uid://cwl7pygoo30rr" path="res://assets/models/office/phone.tscn" id="6_0fkaq"]
+[ext_resource type="PackedScene" uid="uid://cvbsh71rce7w3" path="res://assets/models/office/office_chair.tscn" id="7_pbs40"]
+[ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/resources/office_chair/officeChair_grey_material.tres" id="8_s1mh1"]
+[ext_resource type="Material" uid="uid://diddqety08t8c" path="res://assets/models/office/resources/office_chair/officeChair_navy_material.tres" id="9_ccah1"]
+[ext_resource type="PackedScene" uid="uid://y4fqg6lciqh6" path="res://assets/models/office/recycle_bin.tscn" id="10_6kpn3"]
+[ext_resource type="PackedScene" uid="uid://c8ih7dguxv2wf" path="res://assets/models/office/waste_bin.tscn" id="11_w22gq"]
+[ext_resource type="PackedScene" uid="uid://d0bamdt3npiw1" path="res://assets/models/office/water_cooler.tscn" id="12_vnwu8"]
+[ext_resource type="PackedScene" uid="uid://b6n7qn3ccswh" path="res://assets/models/office/water_jug.tscn" id="13_swdni"]
+[ext_resource type="PackedScene" uid="uid://mjpdmx6yif56" path="res://assets/models/office/computer.tscn" id="14_pcc23"]
+[ext_resource type="PackedScene" uid="uid://bn6x22rtly8hb" path="res://assets/models/office/microwave.tscn" id="15_mycsu"]
+[ext_resource type="PackedScene" uid="uid://c61fa7h7kpsxk" path="res://assets/models/office/coffee_machine.tscn" id="16_kvmcb"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
+
+[node name="OfficeGeometry" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 0.183013, -0.183013, 0, 0.707107, 0.707107, 0.258819, -0.683013, 0.683013, 0, 5.25108, 0)
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_kc7l7")
+
+[node name="CubicleLarge" parent="." instance=ExtResource("1_4r0md")]
+
+[node name="CubicleSmall" parent="." instance=ExtResource("2_ha7oe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.285405, 0, 8.00477)
+
+[node name="CubicleSmall2" parent="CubicleSmall" instance=ExtResource("2_ha7oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09346, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="CubicleSmall3" parent="CubicleSmall" instance=ExtResource("2_ha7oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19572, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="FilingCabinet" parent="." instance=ExtResource("3_bf4lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381379, 0, 3.25863)
+
+[node name="FilingCabinet2" parent="." instance=ExtResource("3_bf4lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.870228, 0, 3.25863)
+
+[node name="Xerox" parent="." instance=ExtResource("4_f6k1s")]
+transform = Transform3D(0.998978, 0, 0.0451886, 0, 1, 0, -0.0451886, 0, 0.998978, 2.11611, 0, 3.33398)
+
+[node name="OblongTable" parent="." instance=ExtResource("5_8qiwu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.48856, 9.53674e-07, 1.46702)
+
+[node name="Phone" parent="." instance=ExtResource("6_0fkaq")]
+transform = Transform3D(0.844618, 0, 0.53537, 0, 1, 0, -0.53537, 0, 0.844618, 4.34558, 0.823056, 2.25715)
+
+[node name="OfficeChair" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(0.692194, 0, -0.721712, 0, 1, 0, 0.721712, 0, 0.692194, 2.98584, 0, 6.93273)
+material_override = ExtResource("8_s1mh1")
+
+[node name="OfficeChair2" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(-0.997143, 0, -0.0755357, 0, 1, 0, 0.0755357, 0, -0.997143, 1.47873, 0, 0.872474)
+material_override = ExtResource("8_s1mh1")
+
+[node name="OfficeChair3" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(-0.997389, 0, 0.0722112, 0, 1, 0, -0.0722112, 0, -0.997389, 2.75454, 0, 0.872474)
+material_override = ExtResource("9_ccah1")
+
+[node name="OfficeChair4" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(0.997797, 0, 0.0663435, 0, 1, 0, -0.0663435, 0, 0.997797, 2.75454, 0, 2.1401)
+
+[node name="OfficeChair6" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(-0.157934, 0, -0.98745, 0, 1, 0, 0.98745, 0, -0.157934, 5.00144, 0, 1.95485)
+
+[node name="OfficeChair5" parent="." instance=ExtResource("7_pbs40")]
+transform = Transform3D(0.999371, 0, -0.0354578, 0, 1, 0, 0.0354578, 0, 0.999371, 1.30006, 0, 2.27769)
+material_override = ExtResource("9_ccah1")
+
+[node name="RecycleBin" parent="." instance=ExtResource("10_6kpn3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.88561, 0, 3.5509)
+
+[node name="WasteBin" parent="." instance=ExtResource("11_w22gq")]
+transform = Transform3D(-0.0370798, 0, 0.999312, 0, 1, 0, -0.999312, 0, -0.0370798, 2.88817, 0, 3.19975)
+
+[node name="WaterCooler" parent="." instance=ExtResource("12_vnwu8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.322, 0, 2.553)
+
+[node name="WaterJug" parent="." instance=ExtResource("13_swdni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254, 0, 2.17007)
+
+[node name="Computer" parent="." instance=ExtResource("14_pcc23")]
+transform = Transform3D(0.0052534, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.0052534, 4.34357, 0.819398, 1.74276)
+
+[node name="Microwave" parent="." instance=ExtResource("15_mycsu")]
+transform = Transform3D(0.328108, 0, 0.94464, 0, 1, 0, -0.94464, 0, 0.328108, 4.48847, 0.819398, 1.01194)
+
+[node name="CoffeeMachine2" parent="." instance=ExtResource("16_kvmcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.859108, 1.37488, 3.25274)

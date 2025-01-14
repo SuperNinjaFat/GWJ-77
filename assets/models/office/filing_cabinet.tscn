@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7b1blldipq7b"]
+
+[ext_resource type="Material" uid="uid://b15rurpocuwwv" path="res://assets/models/office/resources/filing_cabinet/filingCabinet_material.tres" id="1_gipeu"]
+[ext_resource type="ArrayMesh" uid="uid://hx4j5lbyk2ej" path="res://assets/models/office/resources/filing_cabinet/filingCabinet.obj" id="1_j3fv7"]
+[ext_resource type="PackedScene" uid="uid://cdi2ga2gr3ndc" path="res://assets/models/office/resources/filing_cabinet/drawer.tscn" id="2_r0r6x"]
+
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ep7cn"]
+size = Vector3(0.471252, 1.37006, 0.466675)
+
+[node name="FilingCabinet" type="MeshInstance3D"]
+material_override = ExtResource("1_gipeu")
+mesh = ExtResource("1_j3fv7")
+
+[node name="Drawer_00" parent="." instance=ExtResource("2_r0r6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0295451, -0.199186)
+
+[node name="Drawer_01" parent="." instance=ExtResource("2_r0r6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367658, -0.199186)
+
+[node name="Drawer_02" parent="." instance=ExtResource("2_r0r6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71149, -0.199186)
+
+[node name="Drawer_03" parent="." instance=ExtResource("2_r0r6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05409, -0.199186)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00112915, 0.68985, -0.0010376)
+shape = SubResource("BoxShape3D_ep7cn")

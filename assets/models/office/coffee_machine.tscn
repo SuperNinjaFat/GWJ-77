@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://c61fa7h7kpsxk"]
+
+[ext_resource type="Material" uid="uid://dnuxomrrsua6y" path="res://assets/models/office/resources/coffee_machine/coffeeMachine_material.tres" id="1_m347c"]
+[ext_resource type="ArrayMesh" uid="uid://b2k35oghf36x0" path="res://assets/models/office/resources/coffee_machine/coffeMachine.obj" id="2_tw710"]
+[ext_resource type="ArrayMesh" uid="uid://cdnasn2tgono1" path="res://assets/models/office/resources/coffee_machine/coffeeMachine_switch.obj" id="3_nyq8c"]
+[ext_resource type="PackedScene" uid="uid://db5dhsqi02gy0" path="res://assets/models/office/coffeeMachine_CoffeePot.tscn" id="4_aght6"]
+[ext_resource type="ArrayMesh" uid="uid://kskkr1qu6x77" path="res://assets/models/office/resources/coffee_machine/coffeeMachine_lid.obj" id="5_lebiu"]
+[ext_resource type="ArrayMesh" uid="uid://gwxp61cshtd2" path="res://assets/models/office/resources/coffee_machine/coffeeMachine_filterChamber.obj" id="6_ipqca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gg6g1"]
+size = Vector3(0.265076, 0.355835, 0.241455)
+
+[node name="CoffeeMachine" type="MeshInstance3D"]
+material_override = ExtResource("1_m347c")
+mesh = ExtResource("2_tw710")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000823975, 0.176941, -0.0194092)
+shape = SubResource("BoxShape3D_gg6g1")
+
+[node name="CoffeeMachineSwitch" type="MeshInstance3D" parent="."]
+editor_description = "Switch Down
+Position
+-0.102, 0.159, -0.01
+Rotation
+4.2, -13.3, -1
+
+Switch Up
+Rotation
+-35.7, -12.5, -1.3
+
+LOCAL"
+transform = Transform3D(0.973325, 0.000138452, -0.229432, -0.0174055, 0.997163, -0.0732382, 0.228771, 0.0752779, 0.970565, -0.102, 0.159, -0.01)
+material_override = ExtResource("1_m347c")
+mesh = ExtResource("3_nyq8c")
+
+[node name="CoffeeMachineCoffeePot" parent="." instance=ExtResource("4_aght6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0450988, 0.0073531)
+
+[node name="CoffeeMachineLid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355095, -0.11765)
+material_override = ExtResource("1_m347c")
+mesh = ExtResource("5_lebiu")
+
+[node name="CoffeeMachineFilterChamber" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216093, 0.0222061)
+material_override = ExtResource("1_m347c")
+mesh = ExtResource("6_ipqca")

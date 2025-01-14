@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhxxcxvcy4fpk"
+path="res://.godot/imported/waterJug.obj-1ea9d4f4feb9dc7501a596b6cdd3404f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/waterJug.obj-1ea9d4f4feb9dc7501a596b6cdd3404f.mesh"]
+
+source_file="res://assets/models/office/resources/water_cooler/waterJug.obj"
+dest_files=["res://.godot/imported/waterJug.obj-1ea9d4f4feb9dc7501a596b6cdd3404f.mesh", "res://.godot/imported/waterJug.obj-1ea9d4f4feb9dc7501a596b6cdd3404f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

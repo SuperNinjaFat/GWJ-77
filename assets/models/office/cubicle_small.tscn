@@ -1,11 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdvo8nu2nks1j"]
+[gd_scene load_steps=6 format=3 uid="uid://bdvo8nu2nks1j"]
 
-[ext_resource type="ArrayMesh" uid="uid://dto30uweysnfx" path="res://assets/models/office/cubicle/cubicle_small.obj" id="1_6qxb5"]
-[ext_resource type="Material" uid="uid://drfrbqv7lamal" path="res://assets/models/office/cubicle/cubicle_material.tres" id="2_qs3i3"]
+[ext_resource type="ArrayMesh" uid="uid://efjyevcbgc7r" path="res://assets/models/office/resources/cubicle/cubicle_small.obj" id="1_6qxb5"]
+[ext_resource type="Material" uid="uid://drfrbqv7lamal" path="res://assets/models/office/resources/cubicle/cubicle_material.tres" id="2_qs3i3"]
 
-[node name="CubicleSmall" type="Node3D"]
 
-[node name="CubicleSmall" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_tclo3"]
+size = Vector3(0.160767, 1.60031, 1.91296)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tap0f"]
+size = Vector3(2.11908, 1.60535, 0.158386)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jip7q"]
+size = Vector3(0.906128, 1.60059, 0.156494)
+
+[node name="CubicleSmall" type="MeshInstance3D"]
 material_override = ExtResource("2_qs3i3")
 mesh = ExtResource("1_6qxb5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="wall_1_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00262451, 0.79737, 1.03491)
+shape = SubResource("BoxShape3D_tclo3")
+
+[node name="wall_2_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98139, 0.799836, -0.00331348)
+shape = SubResource("BoxShape3D_tap0f")
+
+[node name="wall_3_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9676, 0.79737, 1.03491)
+shape = SubResource("BoxShape3D_tclo3")
+
+[node name="wall_4_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42828, 0.797363, 1.90257)
+shape = SubResource("BoxShape3D_jip7q")
