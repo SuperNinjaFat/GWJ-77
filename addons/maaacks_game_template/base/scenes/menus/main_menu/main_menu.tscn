@@ -1,13 +1,82 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=30 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://hmx6o472ropw" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_qvrrd"]
+[ext_resource type="PackedScene" uid="uid://bb3dnen65tocv" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_ryg2s"]
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_game_template/base/scenes/credits/credits.tscn" id="3_5dhvp"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="4_l1ebe"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="4_w8sbm"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="6_bs342"]
+[ext_resource type="Texture2D" uid="uid://bens18hl4h26y" path="res://assets/ui/backgrounds/main_menu_bg.png" id="6_igcfh"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_pdiij"]
+[ext_resource type="Texture2D" uid="uid://6fyqg24svetp" path="res://assets/ui/backgrounds/computer_menu_img.png" id="7_citvi"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_j7612"]
+[ext_resource type="Texture2D" uid="uid://dkim2l0cyx0jb" path="res://assets/ui/ui_sprites/icon_sprite_sheet.png" id="11_mdgle"]
+[ext_resource type="FontFile" uid="uid://b5kqacgxl45d2" path="res://assets/ui/fonts/Habbo.ttf" id="12_wgub5"]
+[ext_resource type="Texture2D" uid="uid://dkkr81jtl1eql" path="res://assets/ui/ui_sprites/butterfly_icon.png" id="13_wnrjx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgygj"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 15, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbt8h"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 15, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yml6o"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(217, 15, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_habta"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 103, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ql0on"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 103, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgsby"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(217, 103, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emi1e"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 191, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crvch"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 191, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8ont"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(216, 191, 61, 61)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kry4"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 279, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61cat"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 279, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4k7n"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(217, 279, 60, 60)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2410q"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qix8"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 367, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uk4yl"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 367, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwjvy"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(217, 367, 60, 60)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -17,7 +86,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
-options_packed_scene = ExtResource("2_qvrrd")
+game_scene_path = "res://scenes/game_scene/levels/level_office.tscn"
+options_packed_scene = ExtResource("2_ryg2s")
 credits_packed_scene = ExtResource("3_5dhvp")
 
 [node name="UISoundController" type="Node" parent="."]
@@ -32,6 +102,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("6_igcfh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackgroundTextureComputer" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_citvi")
 expand_mode = 1
 stretch_mode = 5
 
@@ -76,6 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TitleMargin" type="MarginContainer" parent="MenuContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 32
 
@@ -90,12 +173,13 @@ anchor_right = 1.0
 offset_bottom = 67.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
-text = "Title"
+text = "Godot Wild Jam #77"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_j7612")
 
 [node name="SubTitleMargin" type="MarginContainer" parent="MenuContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 96
 
@@ -117,8 +201,10 @@ vertical_alignment = 1
 [node name="MenuButtonsMargin" type="MarginContainer" parent="MenuContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_top = 136
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_left = 410
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 410
+theme_override_constants/margin_bottom = 300
 
 [node name="MenuButtonsContainer" type="Control" parent="MenuContainer/MenuButtonsMargin"]
 layout_mode = 2
@@ -127,46 +213,154 @@ mouse_filter = 2
 [node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -104.0
-offset_right = 64.0
-offset_bottom = 104.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 16
-alignment = 1
+theme_override_constants/separation = 24
 vertical = true
 script = ExtResource("4_l1ebe")
 
 [node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "New Game"
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_sgygj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbt8h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yml6o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mbt8h")
+
+[node name="LabelMargin" type="MarginContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="PLAY" type="Label" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "PLAY"
+horizontal_alignment = 1
 
 [node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "Options"
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_habta")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ql0on")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qgsby")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ql0on")
+
+[node name="LabelMargin" type="MarginContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="Options" type="Label" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "OPTIONS"
+horizontal_alignment = 1
 
 [node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "Credits"
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_emi1e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_crvch")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y8ont")
+theme_override_styles/normal = SubResource("StyleBoxTexture_crvch")
+
+[node name="LabelMargin" type="MarginContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="CREDITS" type="Label" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+horizontal_alignment = 1
 
 [node name="ExitButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "Exit"
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_5kry4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_61cat")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k4k7n")
+theme_override_styles/normal = SubResource("StyleBoxTexture_61cat")
+
+[node name="LabelMargin" type="MarginContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="QUIT" type="Label" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ExitButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+horizontal_alignment = 1
+
+[node name="MarginTest" type="ColorRect" parent="MenuContainer/MenuButtonsMargin"]
+visible = false
+layout_mode = 2
+
+[node name="BottomBarMargin" type="MarginContainer" parent="MenuContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 395
+theme_override_constants/margin_top = 440
+theme_override_constants/margin_right = 394
+theme_override_constants/margin_bottom = 251
+
+[node name="ButterflyButton" type="Button" parent="MenuContainer/BottomBarMargin"]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = -38
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2410q")
+text = "????"
+icon = ExtResource("13_wnrjx")
+alignment = 2
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -194,10 +388,10 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme_override_constants/margin_left = 16
+theme_override_constants/margin_left = 331
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 638
 
 [node name="FlowControl" type="Control" parent="FlowControlContainer"]
 layout_mode = 2
@@ -206,7 +400,7 @@ mouse_filter = 2
 [node name="BackButton" type="Button" parent="FlowControlContainer/FlowControl"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(62, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -214,7 +408,27 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 62.0
 grow_vertical = 0
-text = "Back"
+theme_override_styles/focus = SubResource("StyleBoxTexture_3qix8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uk4yl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dwjvy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uk4yl")
+
+[node name="LabelMargin" type="MarginContainer" parent="FlowControlContainer/FlowControl/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="RETURN" type="Label" parent="FlowControlContainer/FlowControl/BackButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
