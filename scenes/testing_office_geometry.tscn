@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=18 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b6n7qn3ccswh" path="res://assets/models/office/water_jug.tscn" id="13_swdni"]
 [ext_resource type="PackedScene" uid="uid://mjpdmx6yif56" path="res://assets/models/office/computer.tscn" id="14_pcc23"]
 [ext_resource type="PackedScene" uid="uid://bn6x22rtly8hb" path="res://assets/models/office/microwave.tscn" id="15_mycsu"]
+[ext_resource type="PackedScene" uid="uid://c61fa7h7kpsxk" path="res://assets/models/office/coffee_machine.tscn" id="16_kvmcb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -94,3 +95,6 @@ transform = Transform3D(0.0052534, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.0052534
 
 [node name="Microwave" parent="." instance=ExtResource("15_mycsu")]
 transform = Transform3D(0.328108, 0, 0.94464, 0, 1, 0, -0.94464, 0, 0.328108, 4.48847, 0.819398, 1.01194)
+
+[node name="CoffeeMachine2" parent="." instance=ExtResource("16_kvmcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.859108, 1.37488, 3.25274)

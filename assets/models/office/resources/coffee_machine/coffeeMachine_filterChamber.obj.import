@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gwxp61cshtd2"
+path="res://.godot/imported/coffeeMachine_filterChamber.obj-6110ed9ffb2f17930be9f935d3a02dfa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coffeeMachine_filterChamber.obj-6110ed9ffb2f17930be9f935d3a02dfa.mesh"]
+
+source_file="res://assets/models/office/resources/coffee_machine/coffeeMachine_filterChamber.obj"
+dest_files=["res://.godot/imported/coffeeMachine_filterChamber.obj-6110ed9ffb2f17930be9f935d3a02dfa.mesh", "res://.godot/imported/coffeeMachine_filterChamber.obj-6110ed9ffb2f17930be9f935d3a02dfa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
