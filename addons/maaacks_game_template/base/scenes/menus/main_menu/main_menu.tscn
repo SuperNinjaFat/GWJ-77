@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=30 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://hmx6o472ropw" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_qvrrd"]
@@ -65,6 +65,18 @@ region_rect = Rect2(217, 279, 60, 60)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2410q"]
 content_margin_left = 2.0
 content_margin_right = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qix8"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(117, 367, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uk4yl"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(17, 367, 60, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwjvy"]
+texture = ExtResource("11_mdgle")
+region_rect = Rect2(217, 367, 60, 60)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -374,10 +386,10 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme_override_constants/margin_left = 16
+theme_override_constants/margin_left = 331
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 638
 
 [node name="FlowControl" type="Control" parent="FlowControlContainer"]
 layout_mode = 2
@@ -386,7 +398,7 @@ mouse_filter = 2
 [node name="BackButton" type="Button" parent="FlowControlContainer/FlowControl"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(62, 40)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -394,7 +406,27 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 62.0
 grow_vertical = 0
-text = "Back"
+theme_override_styles/focus = SubResource("StyleBoxTexture_3qix8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uk4yl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dwjvy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uk4yl")
+
+[node name="LabelMargin" type="MarginContainer" parent="FlowControlContainer/FlowControl/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="RETURN" type="Label" parent="FlowControlContainer/FlowControl/BackButton/LabelMargin"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("12_wgub5")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

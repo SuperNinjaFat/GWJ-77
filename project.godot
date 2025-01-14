@@ -34,6 +34,8 @@ enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 
 [gui]
 
+theme/custom="res://assets/ui/themes/font_theme.tres"
+theme/custom_font="res://assets/ui/fonts/Habbo.ttf"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]
