@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://hmx6o472ropw" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_qvrrd"]
+[ext_resource type="PackedScene" uid="uid://bb3dnen65tocv" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_ryg2s"]
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_game_template/base/scenes/credits/credits.tscn" id="3_5dhvp"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="4_l1ebe"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="4_w8sbm"]
@@ -86,7 +86,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
-options_packed_scene = ExtResource("2_qvrrd")
+options_packed_scene = ExtResource("2_ryg2s")
 credits_packed_scene = ExtResource("3_5dhvp")
 
 [node name="UISoundController" type="Node" parent="."]
@@ -340,6 +340,7 @@ layout_mode = 2
 
 [node name="BottomBarMargin" type="MarginContainer" parent="MenuContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 395
 theme_override_constants/margin_top = 440
 theme_override_constants/margin_right = 394
