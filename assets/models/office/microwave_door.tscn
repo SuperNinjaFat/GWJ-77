@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxvm2mjocxuwl"]
+
+[ext_resource type="Material" uid="uid://bpxswyidbswfj" path="res://assets/models/office/resources/microwave/microwave_material.tres" id="1_lhuv7"]
+[ext_resource type="ArrayMesh" uid="uid://bultw2wvnpm3h" path="res://assets/models/office/resources/microwave/microwaveDoor.obj" id="2_r6bkp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo5hd"]
+size = Vector3(0.406738, 0.304871, 0.0510254)
+
+[node name="MicrowaveDoor" type="MeshInstance3D"]
+material_override = ExtResource("1_lhuv7")
+mesh = ExtResource("2_r6bkp")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 2.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200439, 3.05176e-05, 0.0162354)
+shape = SubResource("BoxShape3D_yo5hd")
