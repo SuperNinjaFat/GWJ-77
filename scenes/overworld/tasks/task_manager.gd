@@ -1,4 +1,4 @@
-class_name TaskManager
+# class_name TaskManager
 extends Node
 
 # Initialize the game tasks
@@ -9,14 +9,14 @@ const NUM_OF_TASKS = 2
 
 const common = preload("res://scenes/overworld/tasks/task_types/task_types_common.gd")
 
-@export var task_points: Array[TaskPoint]
+@onready var task_points = get_tree().get_nodes_in_group("task_point")
 var tasks: Array[TaskBase]
 
 func initialize_tasks() -> void:
 	# create a `NUM_OF_TASKS` amount of random `TaskBase`s
 	# TODO: Only assign certain types of `TaskBase`s to certain types of `TaskPoint`s. ie; Computer related tasks can only be assigned to computers
 	# TODO: Verify whether this duplicates references to the original objects
-	var tmp_task_points: Array[TaskPoint] = task_points.duplicate()
+	var tmp_task_points = task_points.duplicate()
 	for i in NUM_OF_TASKS:
 		var task_point = tmp_task_points.pop_at(randi() % tmp_task_points.size())
 		print("Task_point: ", task_point.global_position)

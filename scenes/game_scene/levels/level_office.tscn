@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=5 format=3 uid="uid://cxdr3xgtkufg2"]
 
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
-[ext_resource type="Script" path="res://scenes/overworld/tasks/task_manager.gd" id="3_rgpln"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
@@ -26,10 +25,6 @@ mesh = SubResource("PlaneMesh_5bs6c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.911948, 0, -0.410305, 0.361159, 0.474564, 0.802716, 0.194716, -0.880221, 0.432778, 0, 9.78683, 0)
-
-[node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("task_points")]
-script = ExtResource("3_rgpln")
-task_points = [NodePath("../TaskPoint"), NodePath("../TaskPoint2"), NodePath("../TaskPoint3"), NodePath("../TaskPoint4")]
 
 [node name="TaskPoint" parent="." instance=ExtResource("4_yqhrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70577, 0, -5.09813)

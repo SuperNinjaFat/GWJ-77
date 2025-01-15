@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xun8l10gt2s" path="res://scenes/overworld/tasks/waterbucket.png" id="2_17ism"]
 [ext_resource type="PackedScene" uid="uid://b4bix4yrb4qat" path="res://scenes/overworld/interaction/interaction_area/InteractionArea.tscn" id="3_ckfnp"]
 
-[node name="TaskPoint" type="Node3D"]
+[node name="TaskPoint" type="Node3D" groups=["task_point"]]
 script = ExtResource("1_d4n1x")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
