@@ -1,0 +1,189 @@
+[gd_scene load_steps=8 format=3 uid="uid://r5otg86c1mlc"]
+
+[ext_resource type="Texture2D" uid="uid://m6tdya5ycbtg" path="res://assets/ui/ui_sprites/helper_body.png" id="1_h0nvg"]
+[ext_resource type="Texture2D" uid="uid://byfsxy6xm76cs" path="res://assets/ui/ui_sprites/helper_eyes.png" id="2_vyqh0"]
+[ext_resource type="Texture2D" uid="uid://bsiepfdpnkglc" path="res://assets/ui/ui_sprites/text_box.png" id="3_oyu8u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_282ca"]
+texture = ExtResource("3_oyu8u")
+texture_margin_left = 7.0
+texture_margin_top = 3.0
+texture_margin_right = 22.0
+texture_margin_bottom = 19.0
+region_rect = Rect2(0, 0, 32, 29)
+
+[sub_resource type="Animation" id="Animation_yg7rk"]
+resource_name = "textbox"
+length = 10.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBoxContainer:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.03333, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HelperBody/HelperEyes:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.03333, 3.6, 4.03333, 7.03333, 8.03333, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 45), Vector2(2, 45), Vector2(2, 48), Vector2(10, 40), Vector2(12, 44), Vector2(7, 45), Vector2(2, 45), Vector2(10, 40), Vector2(2, 48), Vector2(12, 44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HelperBody:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HelperBody:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 10.2, 10.4, 10.6, 10.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.2), Vector2(1, 0.8), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1.2), Vector2(1, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_orlw5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HelperBody/HelperEyes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HelperBody:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HelperBody:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kimsy"]
+_data = {
+"RESET": SubResource("Animation_orlw5"),
+"textbox": SubResource("Animation_yg7rk")
+}
+
+[node name="HelperBuddy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelperBody" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(25, 60)
+texture = ExtResource("1_h0nvg")
+
+[node name="HelperEyes" type="TextureRect" parent="HelperBody"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -6.5
+offset_right = 18.0
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vyqh0")
+stretch_mode = 2
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -120
+theme_override_constants/margin_top = -100
+
+[node name="TextBox" type="PanelContainer" parent="TextBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_282ca")
+
+[node name="AlignmentContainer" type="MarginContainer" parent="TextBoxContainer/TextBox"]
+layout_mode = 2
+theme_override_constants/margin_right = -15
+
+[node name="Text" type="Label" parent="TextBoxContainer/TextBox/AlignmentContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Hi!
+What can 
+I help you 
+with?"
+horizontal_alignment = 1
+
+[node name="BuddyAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kimsy")
+}
