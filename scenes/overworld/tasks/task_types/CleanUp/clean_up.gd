@@ -5,7 +5,7 @@ var activity1: PackedScene = preload("res://scenes/overworld/tasks/task_types/Cl
 
 func _init(points: Array[TaskPoint]) -> void:
 	super(points)
-	print("Made CLEAN_UP task")
+	# print("Made CLEAN_UP task")
 
 
 # Triggers the UI interface to come up. Evoke this when interacting with the UI

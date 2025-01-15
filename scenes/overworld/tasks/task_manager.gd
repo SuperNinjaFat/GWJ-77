@@ -28,7 +28,7 @@ func initialize_tasks() -> void:
 	var tmp_task_points = task_points.duplicate()
 	for i in NUM_OF_TASKS:
 		var task_point = tmp_task_points.pop_at(randi() % tmp_task_points.size())
-		print("Task_point: ", task_point.global_position)
+		# print("Task_point: ", task_point.global_position)
 		var task_type = task_point.task_types[randi() % task_point.task_types.size()]
 		task_point.set_debug_color(TASKTYPE_TO_COLOR[task_type])
 		match task_type:
@@ -38,8 +38,6 @@ func initialize_tasks() -> void:
 				tasks.append(CleanUp.new([task_point]))
 			TASK_TYPE.PRINTER:
 				tasks.append(Printer.new([task_point]))
-	
-	print("Tasks: ", tasks)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

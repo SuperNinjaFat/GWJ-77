@@ -16,11 +16,17 @@ func show_label():
 func hide_label():
 	label.hide()
 
+var enabled: bool = false
+
 func _on_body_exited(body: Node3D) -> void:
+	if !enabled:
+		return
 	InteractionManager.unregister_area(self)
 	# print("Exited")
 
 func _on_body_entered(body: Node3D) -> void:
+	if !enabled:
+		return
 	InteractionManager.register_area(self)
 	# print("Entered")
 pass

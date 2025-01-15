@@ -10,4 +10,3 @@ func _init(points: Array[TaskPoint]) -> void:
 func _on_interact(index):
 	super(index)
 	print("PRINTER UI - ", index)
-	
