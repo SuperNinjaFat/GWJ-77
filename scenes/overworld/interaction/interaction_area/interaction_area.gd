@@ -29,4 +29,3 @@ func _on_body_entered(body: Node3D) -> void:
 		return
 	InteractionManager.register_area(self)
 	# print("Entered")
-pass

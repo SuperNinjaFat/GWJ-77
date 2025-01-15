@@ -43,22 +43,14 @@ func initialize_tasks() -> void:
 func _ready() -> void:
 	initialize_tasks()
 
-func start_ui_timer(duration: float) -> void:
-	var timer = Timer.new()
-	timer.wait_time = duration
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
-	await timer.timeout
-	timer.queue_free()
-
 var in_ui: bool = false
 
 func add_ui(ui: Control) -> void:
-	print("Performing task...")
+	# print("Opened UI...")
 	in_ui = true
 	task_ui_layer.add_child(ui)
-	await start_ui_timer(2.0)
-	ui.queue_free()
-	print("Task performed.")
+
+func remove_ui() -> void:
+	task_ui_layer.get_child(0).queue_free()
+	# print("...Closed UI.")
 	in_ui = false

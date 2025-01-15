@@ -34,14 +34,26 @@ func _physics_process(delta: float) -> void:
 		for i in range(1, active_areas.size()):
 			active_areas[i].hide_label()
 
+var input_timer: Timer = Timer.new()
+const INPUT_TIMEOUT: float = 0.25
+
+func start_input_timer() -> void:
+	input_timer.wait_time = INPUT_TIMEOUT
+	input_timer.one_shot = true
+	add_child(input_timer)
+	# print("input_timer start")
+	input_timer.start()
+	await input_timer.timeout
+	# print("input_timer over")
+	# input_timer.queue_free()
+
 # handle pressing interaction button
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") && can_interact:
-		# print("area_size: ", active_areas.size())
-		if active_areas.size() > 0:
-			can_interact = false
-			active_areas[0].label
-
-			await active_areas[0].interact.call()
-
-			can_interact = true
+	if event.is_action_pressed("interact") && input_timer.is_stopped():
+		if TaskManager.in_ui:
+			TaskManager.remove_ui()
+		else:
+			# print("area_size: ", active_areas.size())
+			if active_areas.size() > 0:
+				start_input_timer()
+				await active_areas[0].interact.call()

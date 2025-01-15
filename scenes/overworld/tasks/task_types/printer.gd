@@ -3,7 +3,7 @@ extends TaskBase
 
 func _init(points: Array[TaskPoint]) -> void:
 	super(points)
-	print("Made PRINTER task")
+	# print("Made PRINTER task")
 
 
 # Triggers the UI interface to come up. Evoke this when interacting with the UI
