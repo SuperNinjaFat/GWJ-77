@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv82c52v8wvon"]
 
-[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/clean_up.gd" id="1_o8is0"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/CleanUp/clean_up.gd" id="1_o8is0"]
 
 [node name="CleanUp" type="Node"]
 script = ExtResource("1_o8is0")

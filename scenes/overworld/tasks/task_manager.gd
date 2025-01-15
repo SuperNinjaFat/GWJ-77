@@ -3,11 +3,20 @@ extends Node
 
 # Initialize the game tasks
 # Listens to tasks
+# Create and remove task UIs
 # Calculates scores at the end of the day
 
 const NUM_OF_TASKS = 2
 
-const common = preload("res://scenes/overworld/tasks/task_types/task_types_common.gd")
+enum TASK_TYPE {NONE = -1, WORKSTATION, COFFEE, PRINTER}
+
+const TASKTYPE_TO_COLOR = {
+	TASK_TYPE.COFFEE: Color.ROSY_BROWN,
+	TASK_TYPE.WORKSTATION: Color.SKY_BLUE,
+	TASK_TYPE.PRINTER: Color.SANDY_BROWN
+}
+
+@onready var task_ui_layer: CanvasLayer = $TaskUI
 
 @onready var task_points = get_tree().get_nodes_in_group("task_point")
 var tasks: Array[TaskBase]
@@ -21,13 +30,14 @@ func initialize_tasks() -> void:
 		var task_point = tmp_task_points.pop_at(randi() % tmp_task_points.size())
 		print("Task_point: ", task_point.global_position)
 		var task_type = task_point.task_types[randi() % task_point.task_types.size()]
+		task_point.set_debug_color(TASKTYPE_TO_COLOR[task_type])
 		match task_type:
-			common.TASK_TYPE.COFFEE:
-				tasks.append(Coffee.new(task_point))
-			common.TASK_TYPE.WORKSTATION:
-				tasks.append(CleanUp.new(task_point))
-			common.TASK_TYPE.PRINTER:
-				tasks.append(Printer.new(task_point))
+			TASK_TYPE.COFFEE:
+				tasks.append(Coffee.new([task_point]))
+			TASK_TYPE.WORKSTATION:
+				tasks.append(CleanUp.new([task_point]))
+			TASK_TYPE.PRINTER:
+				tasks.append(Printer.new([task_point]))
 	
 	print("Tasks: ", tasks)
 
@@ -46,10 +56,11 @@ func start_ui_timer(duration: float) -> void:
 
 var in_ui: bool = false
 
-func trigger_ui() -> void:
+func add_ui(ui: Control) -> void:
 	print("Performing task...")
 	in_ui = true
+	task_ui_layer.add_child(ui)
 	await start_ui_timer(2.0)
-	
+	ui.queue_free()
 	print("Task performed.")
 	in_ui = false

@@ -4,3 +4,5 @@
 
 [node name="TaskManager" type="Node"]
 script = ExtResource("1_a2u2r")
+
+[node name="TaskUI" type="CanvasLayer" parent="."]

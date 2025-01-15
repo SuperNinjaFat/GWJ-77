@@ -4,10 +4,3 @@
 
 [node name="InteractionManager" type="Node3D"]
 script = ExtResource("1_ps8hb")
-
-[node name="Label3D" type="Label3D" parent="."]
-billboard = 1
-render_priority = 20
-text = "[E] to interact"
-horizontal_alignment = 0
-vertical_alignment = 0

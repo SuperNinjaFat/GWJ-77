@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=5 format=3 uid="uid://cxdr3xgtkufg2"]
 
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
-[ext_resource type="PackedScene" uid="uid://dq7r87754trn3" path="res://scenes/overworld/tasks/task_ui/TaskUI.tscn" id="4_brvbc"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
@@ -42,7 +41,3 @@ task_types = Array[int]([0])
 [node name="TaskPoint4" parent="." instance=ExtResource("4_yqhrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37484, 0, 2.83518)
 task_types = Array[int]([0])
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TaskUi" parent="CanvasLayer" instance=ExtResource("4_brvbc")]
