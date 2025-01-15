@@ -10,3 +10,4 @@ func _init(point: TaskPoint) -> void:
 func _on_interact():
 	print("CLEAN_UP UI")
 	# await timeout or something
+	TaskManager.trigger_ui()

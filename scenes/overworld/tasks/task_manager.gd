@@ -34,3 +34,22 @@ func initialize_tasks() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize_tasks()
+
+func start_ui_timer(duration: float) -> void:
+	var timer = Timer.new()
+	timer.wait_time = duration
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	timer.queue_free()
+
+var in_ui: bool = false
+
+func trigger_ui() -> void:
+	print("Performing task...")
+	in_ui = true
+	await start_ui_timer(2.0)
+	
+	print("Task performed.")
+	in_ui = false
