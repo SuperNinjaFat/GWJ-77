@@ -212,8 +212,7 @@ theme = SubResource("Theme_ubrjc")
 bbcode_enabled = true
 text = "[center][font_size=48]Godot Wild Jam #77 Team[/font_size]
 
-[font_size=32]Max Johnson[/font_size]
-[font_size=24] Composer, Sound Designer[/font_size]
+
 
 [font_size=32]Sam Scott[/font_size]
 [font_size=24] Programmer, Combat Designer[/font_size]
@@ -223,6 +222,12 @@ text = "[center][font_size=48]Godot Wild Jam #77 Team[/font_size]
 
 [font_size=32][url=meganeaton.me]Megan Eaton[/url][/font_size]
 [font_size=24] UX/UI Designer[/font_size]
+
+[font_size=32]Alexis Wilson[/font_size]
+[font_size=24]3D Artist[/font_size]
+
+[font_size=32]Max Johnson[/font_size]
+[font_size=24] Composer, Sound Designer[/font_size]
 
 [center][font_size=48]Resources[/font_size]
 
