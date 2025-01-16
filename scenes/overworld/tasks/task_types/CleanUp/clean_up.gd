@@ -1,8 +1,7 @@
 class_name CleanUp
 extends TaskBase
 
-# var activity1: PackedScene = preload("res://scenes/overworld/tasks/task_types/CleanUp/CleanUpActivity.tscn")
-var activity1: PackedScene = preload("res://scenes/overworld/tasks/task_types/CleanUp2/CleanUp2.tscn")
+var activity1: PackedScene = preload("res://scenes/overworld/tasks/task_types/CleanUp/CleanUp.tscn")
 
 func _init(points: Array[TaskPoint]) -> void:
 	super(points)
