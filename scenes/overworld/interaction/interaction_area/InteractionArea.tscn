@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4bix4yrb4qat"]
+
+[ext_resource type="Script" path="res://scenes/overworld/interaction/interaction_area/interaction_area.gd" id="1_dtdvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5db7"]
+
+[node name="InteractionArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dtdvl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_d5db7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

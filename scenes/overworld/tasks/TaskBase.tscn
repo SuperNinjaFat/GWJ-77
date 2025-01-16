@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0jluak2q3klt"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_base.gd" id="1_ohgm7"]
+
+[node name="TaskBase" type="Node"]
+script = ExtResource("1_ohgm7")
