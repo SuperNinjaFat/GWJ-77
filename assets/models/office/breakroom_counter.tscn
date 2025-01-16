@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://285nt380y3jq"]
+
+[ext_resource type="Material" uid="uid://vkcafrcxrkbj" path="res://assets/models/office/resources/breakroom_cabinetry/breakroom_cabinets_material.tres" id="1_rds3a"]
+[ext_resource type="ArrayMesh" uid="uid://cr6nfaphc0ojk" path="res://assets/models/office/resources/breakroom_cabinetry/breakroom_counter.obj" id="1_rgu1f"]
+[ext_resource type="Material" uid="uid://p8df2aqeray3" path="res://assets/models/office/resources/breakroom_cabinetry/breakroom_counters_material.tres" id="2_ydygn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7jhj"]
+size = Vector3(3.41498, 0.940491, 0.873596)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iomip"]
+size = Vector3(3.38892, 1.24918, 0.170776)
+
+[node name="BreakroomCounter" type="MeshInstance3D"]
+mesh = ExtResource("1_rgu1f")
+surface_material_override/0 = ExtResource("1_rds3a")
+surface_material_override/1 = ExtResource("2_ydygn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00234985, 0.47226, 0.434418)
+shape = SubResource("BoxShape3D_s7jhj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256348, 1.57158, 0.0831909)
+shape = SubResource("BoxShape3D_iomip")

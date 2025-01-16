@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnyyhvci2b1hw"
+path="res://.godot/imported/breakroom_cabinet_small.obj-b7dd8dc05f4851fe488ab06e9b21fa29.mesh"
+
+[deps]
+
+files=["res://.godot/imported/breakroom_cabinet_small.obj-b7dd8dc05f4851fe488ab06e9b21fa29.mesh"]
+
+source_file="res://assets/models/office/resources/breakroom_cabinetry/breakroom_cabinet_small.obj"
+dest_files=["res://.godot/imported/breakroom_cabinet_small.obj-b7dd8dc05f4851fe488ab06e9b21fa29.mesh", "res://.godot/imported/breakroom_cabinet_small.obj-b7dd8dc05f4851fe488ab06e9b21fa29.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
