@@ -1,10 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=25 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
+[ext_resource type="PackedScene" uid="uid://cnjc5cvqurjji" path="res://assets/models/office/c_desk_long_U.tscn" id="2_h4e8f"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
 [ext_resource type="PackedScene" uid="uid://b7b1blldipq7b" path="res://assets/models/office/filing_cabinet.tscn" id="3_bf4lv"]
+[ext_resource type="PackedScene" uid="uid://evxqvqg8kyoy" path="res://assets/models/office/c_desk_short_L.tscn" id="4_0p5h6"]
 [ext_resource type="PackedScene" uid="uid://bq50dart457xo" path="res://assets/models/office/xerox.tscn" id="4_f6k1s"]
 [ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="5_8qiwu"]
+[ext_resource type="PackedScene" uid="uid://bp66ky87qgjrb" path="res://assets/models/office/c_desk_short.tscn" id="5_t21kj"]
 [ext_resource type="PackedScene" uid="uid://cwl7pygoo30rr" path="res://assets/models/office/phone.tscn" id="6_0fkaq"]
 [ext_resource type="PackedScene" uid="uid://cvbsh71rce7w3" path="res://assets/models/office/office_chair.tscn" id="7_pbs40"]
 [ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/resources/office_chair/officeChair_grey_material.tres" id="8_s1mh1"]
@@ -34,6 +37,9 @@ mesh = SubResource("PlaneMesh_kc7l7")
 
 [node name="CubicleLarge" parent="." instance=ExtResource("1_4r0md")]
 
+[node name="CDeskLongU" parent="CubicleLarge" instance=ExtResource("2_h4e8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.975, 3.81526, 0, 0.051182)
+
 [node name="CubicleSmall" parent="." instance=ExtResource("2_ha7oe")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.285405, 0, 8.00477)
 
@@ -41,9 +47,15 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.285
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09346, 0, 0)
 skeleton = NodePath("../..")
 
+[node name="CDeskShortL" parent="CubicleSmall/CubicleSmall2" instance=ExtResource("4_0p5h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9013, 0, 0.064126)
+
 [node name="CubicleSmall3" parent="CubicleSmall" instance=ExtResource("2_ha7oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19572, 0, 0)
 skeleton = NodePath("../..")
+
+[node name="CDeskShort" parent="CubicleSmall/CubicleSmall3" instance=ExtResource("5_t21kj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95436, 0, 0.0495996)
 
 [node name="FilingCabinet" parent="." instance=ExtResource("3_bf4lv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381379, 0, 3.25863)
