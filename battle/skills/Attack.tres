@@ -7,6 +7,6 @@ script = ExtResource("1_qvbon")
 display_name = "Attack"
 cost = 0
 attack_flag = true
-damage = 5
+damage = 10
 attack_mod = 1.0
 defense_mod = 1.0

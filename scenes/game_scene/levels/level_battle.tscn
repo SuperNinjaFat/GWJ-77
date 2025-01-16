@@ -1,0 +1,297 @@
+[gd_scene load_steps=20 format=3 uid="uid://blp06op0uxsy7"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/levels/level.gd" id="1_wx1hk"]
+[ext_resource type="Script" path="res://battle/battle_thing.gd" id="3_atj0i"]
+[ext_resource type="Script" path="res://battle/battle_player.gd" id="3_bpvha"]
+[ext_resource type="Script" path="res://battle/ui/pointer_option.gd" id="3_sw61f"]
+[ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="4_gdmuy"]
+[ext_resource type="Texture2D" uid="uid://b3lhp7lhbq2u1" path="res://battle/assets/kickstarter25b.png" id="4_n1ubf"]
+[ext_resource type="Script" path="res://battle/battle_system.gd" id="5_g15vd"]
+[ext_resource type="Texture2D" uid="uid://8spy65pqyfh4" path="res://battle/assets/enemy.png" id="6_1g10l"]
+[ext_resource type="Script" path="res://battle/ui/battle_player_control.gd" id="7_oijbm"]
+[ext_resource type="Texture2D" uid="uid://ce1npijssrxxv" path="res://battle/assets/Untitled.png" id="7_uw01j"]
+[ext_resource type="Script" path="res://battle/ui/pointer.gd" id="9_ymef0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0nrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni1mc"]
+bg_color = Color(0.359375, 0.359375, 0.359375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bi56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms12v"]
+bg_color = Color(0.320313, 0.320313, 0.320313, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1igme"]
+bg_color = Color(0.6, 0.14978, 0.258361, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n82v"]
+bg_color = Color(0.301689, 0.6, 0.376267, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs7vs"]
+albedo_color = Color(0.148431, 0.176697, 0.183594, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y54at"]
+material = SubResource("StandardMaterial3D_cs7vs")
+size = Vector2(20, 15)
+
+[node name="BattleLevel" type="Node3D"]
+script = ExtResource("1_wx1hk")
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="BattlePlayerControl" type="Control" parent="BattleUI" node_paths=PackedStringArray("battle_system", "player_battlething", "enemy_battlething")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_oijbm")
+battle_system = NodePath("../../BattleSystem")
+player_battlething = NodePath("../../Player/BattleThing")
+enemy_battlething = NodePath("../../Enemy/BattleThing")
+metadata/_edit_lock_ = true
+
+[node name="WhatToDo" type="Panel" parent="BattleUI/BattlePlayerControl"]
+layout_mode = 1
+offset_left = 52.0
+offset_top = 498.0
+offset_right = 227.0
+offset_bottom = 692.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0nrk")
+
+[node name="Label" type="Label" parent="BattleUI/BattlePlayerControl/WhatToDo"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 83.0
+offset_bottom = 32.0
+text = "What to do?"
+
+[node name="Panel" type="Panel" parent="BattleUI/BattlePlayerControl/WhatToDo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 44.0
+offset_right = -21.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ni1mc")
+
+[node name="ActionsContainer" type="VBoxContainer" parent="BattleUI/BattlePlayerControl/WhatToDo/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Attack" type="Label" parent="BattleUI/BattlePlayerControl/WhatToDo/Panel/ActionsContainer"]
+layout_mode = 2
+text = "Attack"
+script = ExtResource("3_sw61f")
+
+[node name="SkillLabel" type="Label" parent="BattleUI/BattlePlayerControl/WhatToDo/Panel/ActionsContainer"]
+layout_mode = 2
+text = "Skill"
+script = ExtResource("3_sw61f")
+
+[node name="MorphLabel" type="Label" parent="BattleUI/BattlePlayerControl/WhatToDo/Panel/ActionsContainer"]
+layout_mode = 2
+text = "Morph"
+script = ExtResource("3_sw61f")
+
+[node name="RollLabel" type="Label" parent="BattleUI/BattlePlayerControl/WhatToDo/Panel/ActionsContainer"]
+layout_mode = 2
+text = "Roll"
+script = ExtResource("3_sw61f")
+
+[node name="WhatDoesItDo" type="Panel" parent="BattleUI/BattlePlayerControl"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 19.0
+offset_right = 984.0
+offset_bottom = 233.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v0nrk")
+
+[node name="Label" type="Label" parent="BattleUI/BattlePlayerControl/WhatDoesItDo"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 9.0
+offset_right = 392.0
+offset_bottom = 35.0
+text = "Action Name
+"
+
+[node name="Panel" type="Panel" parent="BattleUI/BattlePlayerControl/WhatDoesItDo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 111.0
+offset_right = -21.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ni1mc")
+
+[node name="Label" type="Label" parent="BattleUI/BattlePlayerControl/WhatDoesItDo/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "youll never see it comminnnngggggg
+youll see
+that my mind is too fast for eyes"
+
+[node name="IconTexture" type="TextureRect" parent="BattleUI/BattlePlayerControl/WhatDoesItDo"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 39.0
+offset_right = 358.0
+offset_bottom = 103.0
+texture = ExtResource("4_gdmuy")
+
+[node name="StatUI" type="Panel" parent="BattleUI/BattlePlayerControl"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 526.0
+offset_right = 599.0
+offset_bottom = 690.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bi56")
+
+[node name="Label" type="Label" parent="BattleUI/BattlePlayerControl/StatUI"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 222.0
+offset_bottom = 35.0
+scale = Vector2(1.1, 1.1)
+theme_override_font_sizes/font_size = 32
+text = "Little Bug Guy - Level 1"
+
+[node name="HPBar" type="ProgressBar" parent="BattleUI/BattlePlayerControl/StatUI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 64.0
+offset_right = 346.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ms12v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1igme")
+max_value = 40.0
+value = 40.0
+show_percentage = false
+
+[node name="Label1" type="Label" parent="BattleUI/BattlePlayerControl/StatUI/HPBar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 32
+text = "HP
+"
+
+[node name="HPNum" type="Label" parent="BattleUI/BattlePlayerControl/StatUI/HPBar"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 69.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 32
+text = "40/40"
+
+[node name="MorphBar" type="ProgressBar" parent="BattleUI/BattlePlayerControl/StatUI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 124.0
+offset_right = 346.0
+offset_bottom = 152.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ms12v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7n82v")
+max_value = 20.0
+value = 5.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="BattleUI/BattlePlayerControl/StatUI/MorphBar"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -25.0
+offset_right = 69.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 32
+text = "Morph"
+
+[node name="MPNum" type="Label" parent="BattleUI/BattlePlayerControl/StatUI/MorphBar"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 69.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 32
+text = "5/20"
+
+[node name="Pointer" type="TextureRect" parent="BattleUI/BattlePlayerControl" node_paths=PackedStringArray("options_box")]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 534.0
+offset_right = 65.0
+offset_bottom = 588.0
+texture = ExtResource("7_uw01j")
+script = ExtResource("9_ymef0")
+options_box = NodePath("../WhatToDo/Panel/ActionsContainer")
+
+[node name="BattleSystem" type="Node" parent="."]
+script = ExtResource("5_g15vd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 3.5, 3.75)
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_y54at")
+metadata/_edit_lock_ = true
+
+[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("battle_system")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.079, 0)
+script = ExtResource("3_bpvha")
+battle_system = NodePath("../BattleSystem")
+
+[node name="BattleThing" type="Node" parent="Player"]
+script = ExtResource("3_atj0i")
+attack = 10
+
+[node name="Sprite2D" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
+texture = ExtResource("4_n1ubf")
+
+[node name="Enemy" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28171, 0.65, -1.01711)
+
+[node name="BattleThing" type="Node" parent="Enemy"]
+script = ExtResource("3_atj0i")
+
+[node name="Sprite3D" type="Sprite3D" parent="Enemy"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = ExtResource("6_1g10l")
+
+[node name="Enemy2" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05008, 0.65, 0.340707)
+
+[node name="BattleThing" type="Node" parent="Enemy2"]
+script = ExtResource("3_atj0i")
+
+[node name="Sprite3D" type="Sprite3D" parent="Enemy2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = ExtResource("6_1g10l")
+
+[connection signal="selected" from="BattleUI/BattlePlayerControl/WhatToDo/Panel/ActionsContainer/Attack" to="BattleUI/BattlePlayerControl" method="_on_attack_selected"]

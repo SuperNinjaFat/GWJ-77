@@ -7,8 +7,8 @@ var skills = []
 signal on_attack(dmg, targets, callback)
 signal on_hit(dmg, callback)
 
-var attack = 1
-var defense = 1
+@export var attack = 1
+@export var defense = 1
 
 func _init():
 	load_skills()
