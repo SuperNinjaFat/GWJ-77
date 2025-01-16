@@ -1,4 +1,3 @@
-# class_name TaskManager
 extends Node
 
 # Initialize the game tasks
@@ -16,7 +15,7 @@ const TASKTYPE_TO_COLOR = {
 	TASK_TYPE.PRINTER: Color.SANDY_BROWN
 }
 
-@onready var task_ui_layer: CanvasLayer = $TaskUI
+@onready var task_ui_layer: CanvasLayer = $CleanUpUI
 
 @onready var task_points = get_tree().get_nodes_in_group("task_point")
 var tasks: Array[TaskBase]
@@ -51,6 +50,6 @@ func add_ui(ui: Control) -> void:
 	task_ui_layer.add_child(ui)
 
 func remove_ui() -> void:
-	task_ui_layer.get_child(0).queue_free()
 	# print("...Closed UI.")
 	in_ui = false
+	task_ui_layer.get_child(0).queue_free()

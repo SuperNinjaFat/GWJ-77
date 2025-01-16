@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://br3odajocp2gh"]
+[gd_scene load_steps=5 format=3 uid="uid://br3odajocp2gh"]
 
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_7y7p1"]
 [ext_resource type="Script" path="res://scenes/overworld/tasks/task_ui/task_ui_base.gd" id="1_ka05s"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="2_fqpu0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmrg0"]
 radius = 26.0
@@ -24,9 +25,10 @@ offset_bottom = 669.0
 
 [node name="MinigameArea" type="Node2D" parent="Panel"]
 
-[node name="CrumpledPaper" type="RigidBody2D" parent="Panel/MinigameArea"]
+[node name="CrumpledPaper" type="CharacterBody2D" parent="Panel/MinigameArea"]
 position = Vector2(649, 119)
-gravity_scale = 0.6
+input_pickable = true
+script = ExtResource("2_fqpu0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/MinigameArea/CrumpledPaper"]
 texture = ExtResource("1_7y7p1")
@@ -53,3 +55,6 @@ offset_right = 386.0
 offset_bottom = 109.0
 theme_override_font_sizes/font_size = 48
 text = "Cleanup paper"
+
+[connection signal="input_event" from="Panel/MinigameArea/CrumpledPaper" to="." method="_on_crumpled_paper_input_event"]
+[connection signal="input_event" from="Panel/MinigameArea/CrumpledPaper" to="Panel/MinigameArea/CrumpledPaper" method="_on_input_event"]

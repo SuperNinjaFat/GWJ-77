@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://13r5oll6ojwq"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_ui/task_ui_base.gd" id="1_pw4kt"]
+[ext_resource type="PackedScene" uid="uid://cbf1qjevsbr66" path="res://scenes/overworld/tasks/task_types/CleanUp2/DraggableTrash.tscn" id="2_02wlo"]
+[ext_resource type="PackedScene" uid="uid://dctar14vvcdwq" path="res://scenes/overworld/tasks/task_types/CleanUp2/TrashCan.tscn" id="3_ngnon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqjkv"]
+size = Vector2(98, 92.823)
+
+[node name="CleanUp2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pw4kt")
+
+[node name="Draggable" parent="." instance=ExtResource("2_02wlo")]
+position = Vector2(372, 294)
+
+[node name="Draggable2" parent="." instance=ExtResource("2_02wlo")]
+position = Vector2(219, 535)
+
+[node name="Draggable3" parent="." instance=ExtResource("2_02wlo")]
+position = Vector2(537, 551)
+
+[node name="TrashCan" parent="." instance=ExtResource("3_ngnon")]
+position = Vector2(1063, 572)
+scale = Vector2(2.8987, 2.8987)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1081, 492)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 110.411)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cqjkv")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

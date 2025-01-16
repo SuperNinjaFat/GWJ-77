@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dctar14vvcdwq"]
+
+[ext_resource type="Texture2D" uid="uid://xun8l10gt2s" path="res://scenes/overworld/tasks/waterbucket.png" id="1_250r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwbd7"]
+size = Vector2(39.6707, 20)
+
+[node name="TrashCan" type="StaticBody2D"]
+scale = Vector2(2.8987, 2.8987)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -8)
+scale = Vector2(0.84375, 0.835938)
+texture = ExtResource("1_250r6")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8.10596, 14.4893)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cwbd7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-34, -55)
+scale = Vector2(1.6464, 1.6553)
+polygon = PackedVector2Array(3.04998, 23.4312, 12.0601, 54.276, 38.4617, 53.6507, 42.4429, 21.764, 38.4617, 19.6799, 34.4805, 49.0657, 14.9936, 48.8573, 9.75517, 21.5556)
