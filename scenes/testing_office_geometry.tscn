@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=22 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="2_ha7oe"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://285nt380y3jq" path="res://assets/models/office/breakroom_counter.tscn" id="17_507n8"]
 [ext_resource type="PackedScene" uid="uid://bwfhumjai6jg1" path="res://assets/models/office/breakroom_cabinet.tscn" id="18_051q4"]
 [ext_resource type="PackedScene" uid="uid://bhdcgun1nvu06" path="res://assets/models/office/breakroom_cabinet_tall.tscn" id="19_uafhq"]
+[ext_resource type="PackedScene" uid="uid://c4bvskchk5w1n" path="res://assets/models/office/refrigerator.tscn" id="20_7qa04"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -116,3 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45478, 0.942505, -2.1974)
 
 [node name="BreakroomCabinet2" parent="." instance=ExtResource("18_051q4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.52139, 0, -1.35909)
+
+[node name="Refrigerator" parent="." instance=ExtResource("20_7qa04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.062, 0, -2.496)
