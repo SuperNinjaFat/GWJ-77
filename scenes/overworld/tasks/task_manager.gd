@@ -17,13 +17,14 @@ const TASKTYPE_TO_COLOR = {
 
 @onready var task_ui_layer: CanvasLayer = $CleanUpUI
 
-@onready var task_points = get_tree().get_nodes_in_group("task_point")
+var task_points: Array[Node]
 var tasks: Array[TaskBase]
 
 func initialize_tasks() -> void:
 	# create a `NUM_OF_TASKS` amount of random `TaskBase`s
 	# TODO: Only assign certain types of `TaskBase`s to certain types of `TaskPoint`s. ie; Computer related tasks can only be assigned to computers
 	# TODO: Verify whether this duplicates references to the original objects
+	task_points = get_tree().get_nodes_in_group("task_point")
 	var tmp_task_points = task_points.duplicate()
 	for i in NUM_OF_TASKS:
 		var task_point = tmp_task_points.pop_at(randi() % tmp_task_points.size())
@@ -37,10 +38,6 @@ func initialize_tasks() -> void:
 				tasks.append(CleanUp.new([task_point]))
 			TASK_TYPE.PRINTER:
 				tasks.append(Printer.new([task_point]))
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	initialize_tasks()
 
 var in_ui: bool = false
 

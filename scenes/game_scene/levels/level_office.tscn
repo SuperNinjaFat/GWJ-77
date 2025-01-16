@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=6 format=3 uid="uid://cxdr3xgtkufg2"]
 
+[ext_resource type="Script" path="res://scenes/game_scene/levels/level_office.gd" id="1_4q1b5"]
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
@@ -7,6 +8,7 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
 
 [node name="Office" type="Node3D"]
+script = ExtResource("1_4q1b5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -100, 0, 100, -4.37114e-06, 0, 0, 0)
