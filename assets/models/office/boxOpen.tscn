@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bimtxc581h67w"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1urxgxw0gsg4" path="res://assets/models/office/resources/boxesAndPaper/box.obj" id="1_bbx4e"]
+[ext_resource type="Material" uid="uid://bfjvvnyu3nahg" path="res://assets/models/office/resources/boxesAndPaper/boxAndPaper_material.tres" id="1_bdvoi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8rmg"]
+size = Vector3(0.468811, 0.233643, 0.34137)
+
+[node name="BoxOpen" type="MeshInstance3D"]
+material_override = ExtResource("1_bdvoi")
+mesh = ExtResource("1_bbx4e")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00186157, 0.116333, 0.000335693)
+shape = SubResource("BoxShape3D_q8rmg")
