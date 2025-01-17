@@ -33,7 +33,7 @@ func initialize_tasks() -> void:
 		task_point.set_debug_color(TASKTYPE_TO_COLOR[task_type])
 		match task_type:
 			TASK_TYPE.COFFEE:
-				tasks.append(Coffee.new([task_point]))
+				tasks.append(BrewCoffee.new([task_point]))
 			TASK_TYPE.WORKSTATION:
 				tasks.append(CleanUp.new([task_point]))
 			TASK_TYPE.PRINTER:

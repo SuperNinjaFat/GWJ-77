@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dob5s2iq5fq5e"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="1_5bnsy"]
+[ext_resource type="Texture2D" uid="uid://bfstcr01f8n5y" path="res://scenes/overworld/tasks/task_types/BrewCoffee/pitcher.png" id="2_txwuw"]
+[ext_resource type="Texture2D" uid="uid://eit2dsxayjf7" path="res://scenes/overworld/tasks/task_types/BrewCoffee/pitcher_full.png" id="3_cm0w8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4s8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_txwuw")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cm0w8")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66te1"]
+size = Vector2(40, 81)
+
+[node name="Pitcher" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_5bnsy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 0)
+sprite_frames = SubResource("SpriteFrames_u4s8w")
+animation = &"empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_66te1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
