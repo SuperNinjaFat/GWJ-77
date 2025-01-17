@@ -35,9 +35,12 @@ func initialize_tasks() -> void:
 			TASK_TYPE.COFFEE:
 				tasks.append(BrewCoffee.new([task_point]))
 			TASK_TYPE.WORKSTATION:
-				tasks.append(CleanUp.new([task_point]))
+				if randi() % 1 == 0:
+					tasks.append(CleanUp.new([task_point]))
+				else:
+					tasks.append(TimeEntry.new([task_point]))
 			TASK_TYPE.PRINTER:
-				tasks.append(Printer.new([task_point]))
+				tasks.append(PrinterJam.new([task_point]))
 
 var in_ui: bool = false
 

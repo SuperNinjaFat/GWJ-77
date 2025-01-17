@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhvuwdseubnrf"]
+
+[ext_resource type="Texture2D" uid="uid://dvfvra2tg78bh" path="res://scenes/overworld/tasks/task_types/PrinterJam/indicator-light.png" id="1_nwhpl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y72x4"]
+atlas = ExtResource("1_nwhpl")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l5od"]
+atlas = ExtResource("1_nwhpl")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t8bd"]
+atlas = ExtResource("1_nwhpl")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwyno"]
+atlas = ExtResource("1_nwhpl")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffb1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y72x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l5od")
+}],
+"loop": true,
+"name": &"error",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t8bd")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwyno")
+}],
+"loop": true,
+"name": &"success",
+"speed": 5.0
+}]
+
+[node name="IndicatorLight" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ffb1h")
+animation = &"error"
+frame_progress = 0.960664
