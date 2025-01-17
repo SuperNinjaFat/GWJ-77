@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bgucry3o6nav2"]
+[gd_scene load_steps=30 format=3 uid="uid://bgucry3o6nav2"]
 
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_4r0md"]
 [ext_resource type="PackedScene" uid="uid://cnjc5cvqurjji" path="res://assets/models/office/c_desk_long_U.tscn" id="2_h4e8f"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bimtxc581h67w" path="res://assets/models/office/boxOpen.tscn" id="25_2i6ff"]
 [ext_resource type="PackedScene" uid="uid://do8qumwv2ip66" path="res://assets/models/office/paperReams.tscn" id="26_j8tv0"]
 [ext_resource type="PackedScene" uid="uid://ddfid8dr2olds" path="res://assets/models/office/clock.tscn" id="27_pf103"]
+[ext_resource type="PackedScene" uid="uid://bqep42pqlk6he" path="res://assets/models/office/shelving.tscn" id="28_1ly7r"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kc7l7"]
 
@@ -154,3 +155,6 @@ transform = Transform3D(-0.0835909, 0, -0.9965, 0, 1, 0, 0.9965, 0, -0.0835909, 
 
 [node name="Clock" parent="." instance=ExtResource("27_pf103")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35148, 1.32092, 2.98424)
+
+[node name="Shelving" parent="." instance=ExtResource("28_1ly7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49099, -0.0417106, 0.208933)

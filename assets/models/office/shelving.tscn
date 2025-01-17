@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqep42pqlk6he"]
+
+[ext_resource type="Material" uid="uid://2qy7yttoo8dx" path="res://assets/models/office/resources/shelving/shevling_material.tres" id="1_3vfgd"]
+[ext_resource type="ArrayMesh" uid="uid://crbok07arctb4" path="res://assets/models/office/resources/shelving/shelving.obj" id="2_xho0l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtbrl"]
+size = Vector3(1.89154, 0.0856934, 0.894043)
+
+[node name="Shelving" type="MeshInstance3D"]
+material_override = ExtResource("1_3vfgd")
+mesh = ExtResource("2_xho0l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000396729, 0.282837, -0.00219727)
+shape = SubResource("BoxShape3D_vtbrl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000396729, 1.14285, -0.00219727)
+shape = SubResource("BoxShape3D_vtbrl")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000396729, 1.9093, -0.00219727)
+shape = SubResource("BoxShape3D_vtbrl")
