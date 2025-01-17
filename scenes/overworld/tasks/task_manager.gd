@@ -15,7 +15,7 @@ const TASKTYPE_TO_COLOR = {
 	TASK_TYPE.PRINTER: Color.SANDY_BROWN
 }
 
-@onready var task_ui_layer: CanvasLayer = $CleanUpUI
+@onready var task_ui_layer: CanvasLayer = $CanvasLayer
 
 var task_points: Array[Node]
 var tasks: Array[TaskBase]
