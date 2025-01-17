@@ -45,8 +45,10 @@ func _ready():
 
 func _setup_game_buttons():
 	super._setup_game_buttons()
-	if GameState.has_game_state():
-		%ContinueGameButton.show()
+	#if GameState.has_game_state():
+		# %ContinueGameButton.show()
+#Max - Commented out continue button for menu until/unless we have a longer game that needs this.
+
 
 func _on_continue_game_button_pressed():
 	load_game_scene()

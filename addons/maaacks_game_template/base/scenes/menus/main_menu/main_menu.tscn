@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=29 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bb3dnen65tocv" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_ryg2s"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_j7612"]
 [ext_resource type="Texture2D" uid="uid://dkim2l0cyx0jb" path="res://assets/ui/ui_sprites/icon_sprite_sheet.png" id="11_mdgle"]
 [ext_resource type="FontFile" uid="uid://b5kqacgxl45d2" path="res://assets/ui/fonts/Habbo.ttf" id="12_wgub5"]
-[ext_resource type="Texture2D" uid="uid://dkkr81jtl1eql" path="res://assets/ui/ui_sprites/butterfly_icon.png" id="13_wnrjx"]
+[ext_resource type="PackedScene" uid="uid://bl1swj81khre3" path="res://scenes/menus/main_menu/butterfly_button.tscn" id="13_2g1tp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgygj"]
 texture = ExtResource("11_mdgle")
@@ -61,10 +61,6 @@ region_rect = Rect2(17, 279, 60, 60)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4k7n"]
 texture = ExtResource("11_mdgle")
 region_rect = Rect2(217, 279, 60, 60)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2410q"]
-content_margin_left = 2.0
-content_margin_right = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qix8"]
 texture = ExtResource("11_mdgle")
@@ -342,25 +338,17 @@ layout_mode = 2
 [node name="BottomBarMargin" type="MarginContainer" parent="MenuContainer"]
 layout_mode = 2
 mouse_filter = 2
+
+[node name="BottomBarMargin" type="MarginContainer" parent="MenuContainer/BottomBarMargin"]
+layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 395
 theme_override_constants/margin_top = 440
 theme_override_constants/margin_right = 394
 theme_override_constants/margin_bottom = 251
 
-[node name="ButterflyButton" type="Button" parent="MenuContainer/BottomBarMargin"]
-custom_minimum_size = Vector2(100, 28)
+[node name="ButterflyButton" parent="MenuContainer/BottomBarMargin/BottomBarMargin" instance=ExtResource("13_2g1tp")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/h_separation = -38
-theme_override_fonts/font = ExtResource("12_wgub5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2410q")
-text = "????"
-icon = ExtResource("13_wnrjx")
-alignment = 2
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
