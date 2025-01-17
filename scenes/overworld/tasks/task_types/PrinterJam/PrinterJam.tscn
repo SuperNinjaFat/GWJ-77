@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://gjkbljq7j4fr"]
+
+[ext_resource type="PackedScene" uid="uid://bu4hmlrtijo61" path="res://scenes/overworld/tasks/task_types/PrinterJam/Printer.tscn" id="1_7nam6"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/PrinterJam/printer_jam_ui.gd" id="1_ffp21"]
+[ext_resource type="PackedScene" uid="uid://c3pog8qesbbd0" path="res://scenes/overworld/tasks/task_types/PrinterJam/PrinterDoor.tscn" id="2_de2vl"]
+[ext_resource type="PackedScene" uid="uid://uijec8v7ghhc" path="res://scenes/overworld/tasks/task_types/PrinterJam/JammedPaper.tscn" id="2_wirm6"]
+[ext_resource type="PackedScene" uid="uid://dyj8dh61rdp54" path="res://scenes/overworld/tasks/task_types/PrinterJam/Cartridge.tscn" id="3_c4vv3"]
+[ext_resource type="PackedScene" uid="uid://bhvuwdseubnrf" path="res://scenes/overworld/tasks/task_types/PrinterJam/IndicatorLight.tscn" id="5_px00n"]
+[ext_resource type="PackedScene" uid="uid://ch4s6rhth40ml" path="res://scenes/overworld/tasks/task_types/PrinterJam/PrinterButton.tscn" id="7_c5o8m"]
+
+[node name="PrinterJam" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ffp21")
+
+[node name="Printer" parent="." instance=ExtResource("1_7nam6")]
+position = Vector2(635, 347)
+
+[node name="JammedPaper" parent="." instance=ExtResource("2_wirm6")]
+position = Vector2(655, 326)
+
+[node name="Cartridge" parent="." instance=ExtResource("3_c4vv3")]
+position = Vector2(658, 327)
+
+[node name="PrinterDoor" parent="." instance=ExtResource("2_de2vl")]
+position = Vector2(636, 347)
+
+[node name="IndicatorLight" parent="." instance=ExtResource("5_px00n")]
+position = Vector2(663, 236)
+
+[node name="PrinterButton" parent="." instance=ExtResource("7_c5o8m")]
+position = Vector2(608, 214)

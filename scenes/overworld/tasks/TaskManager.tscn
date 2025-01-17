@@ -5,4 +5,4 @@
 [node name="TaskManager" type="Node"]
 script = ExtResource("1_a2u2r")
 
-[node name="CleanUpUI" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

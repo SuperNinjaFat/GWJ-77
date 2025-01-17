@@ -15,7 +15,7 @@ const TASKTYPE_TO_COLOR = {
 	TASK_TYPE.PRINTER: Color.SANDY_BROWN
 }
 
-@onready var task_ui_layer: CanvasLayer = $CleanUpUI
+@onready var task_ui_layer: CanvasLayer = $CanvasLayer
 
 var task_points: Array[Node]
 var tasks: Array[TaskBase]
@@ -33,11 +33,14 @@ func initialize_tasks() -> void:
 		task_point.set_debug_color(TASKTYPE_TO_COLOR[task_type])
 		match task_type:
 			TASK_TYPE.COFFEE:
-				tasks.append(Coffee.new([task_point]))
+				tasks.append(BrewCoffee.new([task_point]))
 			TASK_TYPE.WORKSTATION:
-				tasks.append(CleanUp.new([task_point]))
+				if randi() % 1 == 0:
+					tasks.append(CleanUp.new([task_point]))
+				else:
+					tasks.append(TimeEntry.new([task_point]))
 			TASK_TYPE.PRINTER:
-				tasks.append(Printer.new([task_point]))
+				tasks.append(PrinterJam.new([task_point]))
 
 var in_ui: bool = false
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3pog8qesbbd0"]
+
+[ext_resource type="Texture2D" uid="uid://ddiev6igba1" path="res://scenes/overworld/tasks/task_types/PrinterJam/printer-door.png" id="1_ybeh4"]
+
+[node name="PrinterDoor" type="Area2D"]
+
+[node name="Printer-door" type="Sprite2D" parent="."]
+position = Vector2(20, -18)
+texture = ExtResource("1_ybeh4")

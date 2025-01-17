@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddl2ykdpswvvm"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="1_0r1vv"]
+[ext_resource type="Texture2D" uid="uid://dgee2wlb5nbl5" path="res://scenes/overworld/tasks/task_types/BrewCoffee/scoop.png" id="1_07wfd"]
+[ext_resource type="Texture2D" uid="uid://byjwb8rn08qpp" path="res://scenes/overworld/tasks/task_types/BrewCoffee/scoop_full.png" id="2_ayn3c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbgwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_07wfd")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ayn3c")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_navq8"]
+radius = 25.4951
+
+[node name="Scoop" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_0r1vv")
+
+[node name="Scoop" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -1)
+sprite_frames = SubResource("SpriteFrames_gbgwu")
+animation = &"empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_navq8")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
