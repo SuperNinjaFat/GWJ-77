@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0w4cgq4at4oo"]
+[gd_scene load_steps=16 format=3 uid="uid://b0w4cgq4at4oo"]
 
 [ext_resource type="Script" path="res://scenes/overworld/overworld_player.gd" id="1_d6e56"]
 [ext_resource type="Texture2D" uid="uid://c8kr2vf0avj6g" path="res://scenes/overworld/worm_baby.png" id="2_7yyeu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ikfn"]
+radius = 0.229437
+height = 0.979817
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcq0y"]
 atlas = ExtResource("2_7yyeu")
@@ -88,17 +90,32 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_vw6fp"]
+
 [node name="OverworldPlayer" type="CharacterBody3D" groups=["player"]]
-collision_layer = 2
 script = ExtResource("1_d6e56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_5ikfn")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 0, 0.660087, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.660087, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_tjqpm")
 animation = &"idle"
 frame_progress = 0.995616
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 0.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_mask = 2
+shape = SubResource("SphereShape3D_vw6fp")
+spring_length = 1.5
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 1.5)
+fov = 70.0
