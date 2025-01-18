@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfgtaasnejy0s"]
+
+[ext_resource type="PackedScene" uid="uid://13r5oll6ojwq" path="res://scenes/overworld/tasks/task_types/CleanUp/CleanUp.tscn" id="1_xbk47"]
+
+[node name="ViewPortTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="ViewportContainer"]
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="CleanUp" parent="ViewportContainer/SubViewport" instance=ExtResource("1_xbk47")]
