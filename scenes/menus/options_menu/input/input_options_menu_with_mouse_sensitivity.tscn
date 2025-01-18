@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1mv0h6sf2y6j"]
+[gd_scene load_steps=5 format=3 uid="uid://d1mv0h6sf2y6j"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_options_menu.tscn" id="1_kkegi"]
+[ext_resource type="PackedScene" uid="uid://dp3rgqaehb3xu" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_options_menu.tscn" id="1_kkegi"]
 [ext_resource type="Script" path="res://scenes/menus/options_menu/input/input_options_menu.gd" id="2_1g3x5"]
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/slider_option_control.tscn" id="3_ekyxf"]
+[ext_resource type="PackedScene" uid="uid://cl416gdb1fgwr" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/slider_option_control.tscn" id="3_ekyxf"]
+[ext_resource type="Theme" uid="uid://cuufq841k55k" path="res://assets/ui/themes/font_theme.tres" id="4_ylvsb"]
 
 [node name="Controls" instance=ExtResource("1_kkegi")]
 script = ExtResource("2_1g3x5")
 
 [node name="VBoxContainer" parent="." index="0"]
-theme_override_constants/separation = 16
+theme_override_constants/separation = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
-theme_override_constants/margin_top = 32
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" index="0"]
@@ -37,5 +38,11 @@ tick_count = 8
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="1"]
 layout_mode = 2
+
+[node name="ScrollContainer" parent="VBoxContainer/InputMappingContainer" index="2"]
+vertical_scroll_mode = 3
+
+[node name="ResetButton" parent="VBoxContainer/InputMappingContainer/HBoxContainer" index="0"]
+theme = ExtResource("4_ylvsb")
 
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkvnrex35gyol"]
+
+[ext_resource type="Texture2D" uid="uid://uj4a0ae6j4e3" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeemaker.png" id="1_udkf7"]
+[ext_resource type="Texture2D" uid="uid://c0bk7ta1g1uoc" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeemaker_groundslid.png" id="2_bggug"]
+[ext_resource type="Texture2D" uid="uid://c5gsknll2uhrv" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeemaker_waterlid.png" id="3_7542q"]
+[ext_resource type="Texture2D" uid="uid://bwmu3vupgrnam" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeemaker_waterindicator.png" id="4_4ia4o"]
+
+[node name="CoffeeMaker" type="Area2D"]
+
+[node name="Coffeemaker" type="Sprite2D" parent="."]
+texture = ExtResource("1_udkf7")
+
+[node name="CoffeemakerGroundslid" type="Sprite2D" parent="."]
+position = Vector2(-41, -88)
+texture = ExtResource("2_bggug")
+
+[node name="CoffeemakerWaterlid" type="Sprite2D" parent="."]
+position = Vector2(65, -76)
+texture = ExtResource("3_7542q")
+
+[node name="CoffeemakerWaterindicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(100, -12)
+texture = ExtResource("4_4ia4o")

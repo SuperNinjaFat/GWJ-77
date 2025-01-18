@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://g3pgh1cl55fw"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="1_i68l2"]
+[ext_resource type="Texture2D" uid="uid://bkom4oxg11mto" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeepot.png" id="2_jnuq3"]
+[ext_resource type="Texture2D" uid="uid://bpbamga0neku8" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffeepot_full.png" id="3_bqjjo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jk8po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jnuq3")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bqjjo")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82jcr"]
+radius = 38.0
+height = 94.0
+
+[node name="CoffeePot" type="CharacterBody2D"]
+z_index = 1
+input_pickable = true
+script = ExtResource("1_i68l2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 0)
+sprite_frames = SubResource("SpriteFrames_jk8po")
+animation = &"empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_82jcr")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0w4cgq4at4oo"]
+
+[ext_resource type="Script" path="res://scenes/overworld/overworld_player.gd" id="1_d6e56"]
+[ext_resource type="Texture2D" uid="uid://c8kr2vf0avj6g" path="res://scenes/overworld/worm_baby.png" id="2_7yyeu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ikfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcq0y"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioi3w"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_camhm"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekrpi"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qa11"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeqku"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtelw"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2rkg"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj27g"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs5ir"]
+atlas = ExtResource("2_7yyeu")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjqpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcq0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioi3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_camhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekrpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qa11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeqku")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtelw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2rkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj27g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs5ir")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]
+
+[node name="OverworldPlayer" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+script = ExtResource("1_d6e56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_5ikfn")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 0, 0.660087, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_tjqpm")
+animation = &"idle"
+frame_progress = 0.995616

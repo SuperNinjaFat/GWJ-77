@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7vkhoyd2l2va"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/BrewCoffee/brew_coffee_ui.gd" id="1_pya5n"]
+[ext_resource type="Texture2D" uid="uid://cf3j6cgfvk0xh" path="res://scenes/overworld/tasks/task_types/BrewCoffee/coffee_desk.png" id="2_hwn25"]
+[ext_resource type="PackedScene" uid="uid://dc3oggyb8eoby" path="res://scenes/overworld/tasks/task_types/BrewCoffee/Sink.tscn" id="3_3do11"]
+[ext_resource type="PackedScene" uid="uid://ddl2ykdpswvvm" path="res://scenes/overworld/tasks/task_types/BrewCoffee/Scoop.tscn" id="3_b2c6r"]
+[ext_resource type="PackedScene" uid="uid://dkvnrex35gyol" path="res://scenes/overworld/tasks/task_types/BrewCoffee/CoffeeMaker.tscn" id="4_7vriq"]
+[ext_resource type="PackedScene" uid="uid://g3pgh1cl55fw" path="res://scenes/overworld/tasks/task_types/BrewCoffee/CoffeePot.tscn" id="4_y4ohq"]
+[ext_resource type="PackedScene" uid="uid://dob5s2iq5fq5e" path="res://scenes/overworld/tasks/task_types/BrewCoffee/Pitcher.tscn" id="5_ybp42"]
+[ext_resource type="PackedScene" uid="uid://dfqx50s1sy0pp" path="res://scenes/overworld/tasks/task_types/BrewCoffee/Grounds.tscn" id="7_87vbp"]
+[ext_resource type="PackedScene" uid="uid://c3p5lpg7qusx3" path="res://scenes/overworld/tasks/task_types/BrewCoffee/Filter.tscn" id="9_maq1o"]
+
+[node name="BrewCoffee" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pya5n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(641, 317)
+scale = Vector2(1.22881, 1.22881)
+texture = ExtResource("2_hwn25")
+
+[node name="Grounds" parent="." instance=ExtResource("7_87vbp")]
+position = Vector2(202, 321)
+
+[node name="Sink" parent="." instance=ExtResource("3_3do11")]
+position = Vector2(906, 335)
+
+[node name="CoffeeMaker" parent="." instance=ExtResource("4_7vriq")]
+position = Vector2(547, 313)
+
+[node name="Scoop" parent="." instance=ExtResource("3_b2c6r")]
+position = Vector2(336, 368)
+
+[node name="CoffeePot" parent="." instance=ExtResource("4_y4ohq")]
+position = Vector2(500, 338)
+
+[node name="Filter" parent="." instance=ExtResource("9_maq1o")]
+position = Vector2(732, 377)
+
+[node name="Pitcher" parent="." instance=ExtResource("5_ybp42")]
+position = Vector2(1070, 372)

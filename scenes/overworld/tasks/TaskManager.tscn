@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceybhrogk16tx"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_manager.gd" id="1_a2u2r"]
+
+[node name="TaskManager" type="Node"]
+script = ExtResource("1_a2u2r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

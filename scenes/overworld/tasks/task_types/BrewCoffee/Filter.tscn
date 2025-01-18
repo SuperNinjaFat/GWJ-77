@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3p5lpg7qusx3"]
+
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="1_i1c20"]
+[ext_resource type="Texture2D" uid="uid://c3mh2kwtbnyfs" path="res://scenes/overworld/tasks/task_types/BrewCoffee/filter.png" id="2_rde78"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkxen"]
+radius = 33.3766
+
+[node name="Filter" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_i1c20")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rde78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rkxen")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
