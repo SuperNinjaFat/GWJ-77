@@ -1,8 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://jcfp28ueehs4"]
+[gd_scene load_steps=14 format=3 uid="uid://jcfp28ueehs4"]
 
 [ext_resource type="Texture2D" uid="uid://cw1b12cgx6rr4" path="res://scenes/overworld/tasks/task_types/TimeEntry/sticky-note.png" id="1_of6rl"]
 [ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/TimeEntry/time_entry_ui.gd" id="1_y1dtg"]
 [ext_resource type="Texture2D" uid="uid://wcby4eh3mn3w" path="res://scenes/overworld/tasks/task_types/TimeEntry/task-monitor.png" id="2_5f0ao"]
+[ext_resource type="FontFile" uid="uid://c6kyba1ag1rqr" path="res://assets/ui/fonts/NothingYouCouldDo-Regular.ttf" id="3_wfnod"]
+[ext_resource type="Texture2D" uid="uid://cwq4bb4g2eaq3" path="res://scenes/overworld/tasks/task_types/TimeEntry/arrow.png" id="4_xyrxt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmjt8"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dotq5"]
+bg_color = Color(0.988235, 0.988235, 0.988235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tjd5"]
+bg_color = Color(0.658824, 0.658824, 0.658824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbqk"]
+bg_color = Color(0.658824, 0.658824, 0.658824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjosv"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.976471, 0.945098, 0.647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3m4i"]
+bg_color = Color(0.658824, 0.658824, 0.658824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6slj"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2d06"]
+bg_color = Color(0.214056, 0.667491, 0.963626, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.988235, 0.988235, 0.988235, 1)
 
 [node name="TimeEntry" type="Control"]
 layout_mode = 3
@@ -17,52 +83,110 @@ script = ExtResource("1_y1dtg")
 position = Vector2(971, 372)
 texture = ExtResource("1_of6rl")
 
-[node name="Label" type="Label" parent="Sticky-note"]
-offset_left = -116.0
-offset_top = -95.0
-offset_right = 103.0
-offset_bottom = -43.0
-text = "- Filed Reports"
+[node name="MarginContainer" type="MarginContainer" parent="Sticky-note"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -195.5
+offset_right = -200.0
+offset_bottom = -195.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0767945
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
 
-[node name="Label2" type="Label" parent="Sticky-note"]
-offset_left = -112.0
-offset_top = 23.0
-offset_right = -49.0
-offset_bottom = 63.0
+[node name="StickyNoteContent" type="VBoxContainer" parent="Sticky-note/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+
+[node name="Task" type="HBoxContainer" parent="Sticky-note/MarginContainer/StickyNoteContent"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 5
+
+[node name="-" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Task"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wfnod")
+theme_override_font_sizes/font_size = 48
+text = "-"
+
+[node name="TaskName" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Task"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wfnod")
+theme_override_font_sizes/font_size = 48
+text = "Filed Reports"
+
+[node name="Times" type="HBoxContainer" parent="Sticky-note/MarginContainer/StickyNoteContent"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 60
+
+[node name="StartTime" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Times"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wfnod")
+theme_override_font_sizes/font_size = 32
 text = "9:30"
 
-[node name="Label3" type="Label" parent="Sticky-note"]
-offset_left = 30.0
-offset_top = 26.0
-offset_right = 72.0
-offset_bottom = 52.0
-text = "11:00"
-
-[node name="Label4" type="Label" parent="Sticky-note"]
-offset_left = -26.0
-offset_top = 24.0
-offset_right = 14.0
-offset_bottom = 50.0
+[node name="-" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Times"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wfnod")
+theme_override_font_sizes/font_size = 32
 text = "-"
+
+[node name="EndTime" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Times"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wfnod")
+theme_override_font_sizes/font_size = 32
+text = "11:00"
 
 [node name="Task-monitor" type="Sprite2D" parent="."]
 position = Vector2(423, 374)
 texture = ExtResource("2_5f0ao")
 
-[node name="Label" type="Label" parent="Task-monitor"]
-offset_left = -99.0
-offset_top = -165.0
-offset_right = 96.0
-offset_bottom = -134.0
+[node name="ContentContainer" type="MarginContainer" parent="Task-monitor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -292.0
+offset_right = -284.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 110
+theme_override_constants/margin_bottom = 280
+
+[node name="ScreenBg" type="Panel" parent="Task-monitor/ContentContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmjt8")
+
+[node name="Content" type="VBoxContainer" parent="Task-monitor/ContentContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TitleContainer" type="MarginContainer" parent="Task-monitor/ContentContainer/Content"]
+layout_mode = 2
+
+[node name="TitleBg" type="Panel" parent="Task-monitor/ContentContainer/Content/TitleContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dotq5")
+
+[node name="Title" type="Label" parent="Task-monitor/ContentContainer/Content/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Time Entry"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="OptionButton" type="OptionButton" parent="Task-monitor"]
-offset_left = -97.0
-offset_top = -121.0
-offset_right = 97.0
-offset_bottom = -59.0
+[node name="TaskOptionButton" type="OptionButton" parent="Task-monitor/ContentContainer/Content"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
 item_count = 4
 popup/item_0/text = "Filed Reports"
 popup/item_1/text = "Ate Donuts"
@@ -72,67 +196,78 @@ popup/item_2/id = 2
 popup/item_3/text = "Give Boss Rundown"
 popup/item_3/id = 3
 
-[node name="Button" type="Button" parent="Task-monitor"]
-offset_left = -188.0
-offset_top = 28.0
-offset_right = -57.0
-offset_bottom = 75.0
+[node name="TimeButtons" type="HBoxContainer" parent="Task-monitor/ContentContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="StartTime" type="OptionButton" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
+custom_minimum_size = Vector2(80, 35)
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "8:00"
+popup/item_1/text = "8:30"
+popup/item_1/id = 1
+popup/item_2/text = "9:00"
+popup/item_2/id = 2
+popup/item_3/text = "9:30"
+popup/item_3/id = 3
+popup/item_4/text = "10:00"
+popup/item_4/id = 4
+popup/item_5/text = "10:30"
+popup/item_5/id = 5
+popup/item_6/text = "11:00"
+popup/item_6/id = 6
+popup/item_7/text = "11:30"
+popup/item_7/id = 7
+
+[node name="->" type="TextureRect" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_xyrxt")
+stretch_mode = 2
+
+[node name="EndTime" type="OptionButton" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "8:00"
+popup/item_1/text = "8:30"
+popup/item_1/id = 1
+popup/item_2/text = "9:00"
+popup/item_2/id = 2
+popup/item_3/text = "9:30"
+popup/item_3/id = 3
+popup/item_4/text = "10:00"
+popup/item_4/id = 4
+popup/item_5/text = "10:30"
+popup/item_5/id = 5
+popup/item_6/text = "11:00"
+popup/item_6/id = 6
+popup/item_7/text = "11:30"
+popup/item_7/id = 7
+
+[node name="TaskActionButtons" type="HBoxContainer" parent="Task-monitor/ContentContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Reset" type="Button" parent="Task-monitor/ContentContainer/Content/TaskActionButtons"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_6tjd5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftbqk")
 text = "Reset"
 
-[node name="Button2" type="Button" parent="Task-monitor"]
-offset_left = 58.0
-offset_top = 28.0
-offset_right = 189.0
-offset_bottom = 75.0
+[node name="Submit" type="Button" parent="Task-monitor/ContentContainer/Content/TaskActionButtons"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_colors/font_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjosv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3m4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f6slj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2d06")
 text = "Submit"
-
-[node name="OptionButton2" type="OptionButton" parent="Task-monitor"]
-offset_left = -118.0
-offset_top = -36.0
-offset_right = -30.0
-offset_bottom = 1.0
-item_count = 8
-popup/item_0/text = "8:00"
-popup/item_1/text = "8:30"
-popup/item_1/id = 1
-popup/item_2/text = "9:00"
-popup/item_2/id = 2
-popup/item_3/text = "9:30"
-popup/item_3/id = 3
-popup/item_4/text = "10:00"
-popup/item_4/id = 4
-popup/item_5/text = "10:30"
-popup/item_5/id = 5
-popup/item_6/text = "11:00"
-popup/item_6/id = 6
-popup/item_7/text = "11:30"
-popup/item_7/id = 7
-
-[node name="OptionButton3" type="OptionButton" parent="Task-monitor"]
-offset_left = 28.0
-offset_top = -36.0
-offset_right = 116.0
-offset_bottom = 1.0
-item_count = 8
-popup/item_0/text = "8:00"
-popup/item_1/text = "8:30"
-popup/item_1/id = 1
-popup/item_2/text = "9:00"
-popup/item_2/id = 2
-popup/item_3/text = "9:30"
-popup/item_3/id = 3
-popup/item_4/text = "10:00"
-popup/item_4/id = 4
-popup/item_5/text = "10:30"
-popup/item_5/id = 5
-popup/item_6/text = "11:00"
-popup/item_6/id = 6
-popup/item_7/text = "11:30"
-popup/item_7/id = 7
-
-[node name="Label2" type="Label" parent="Task-monitor"]
-offset_left = -9.0
-offset_top = -35.0
-offset_right = 31.0
-offset_bottom = -9.0
-text = "->"

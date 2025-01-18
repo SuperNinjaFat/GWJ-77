@@ -10,5 +10,5 @@ texture = ExtResource("1_putkm")
 
 [node name="SinkWater" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(59, 11)
+position = Vector2(-5, 9)
 texture = ExtResource("2_yiml0")

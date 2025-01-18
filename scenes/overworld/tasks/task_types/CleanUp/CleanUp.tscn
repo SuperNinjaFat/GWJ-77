@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bf3y7hv3xq5nf" path="res://scenes/overworld/tasks/task_types/CleanUp/trash3.png" id="6_43my4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqjkv"]
-size = Vector2(119, 65.4115)
+size = Vector2(119, 105)
 
 [node name="CleanUp" type="Control"]
 layout_mode = 3
@@ -29,14 +29,14 @@ scale = Vector2(2.03125, 2.03125)
 texture = ExtResource("4_du1oi")
 
 [node name="Draggable2" parent="." instance=ExtResource("2_02wlo")]
-position = Vector2(219, 535)
+position = Vector2(250, 583)
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable2"]
 scale = Vector2(2.03125, 2.03125)
 texture = ExtResource("5_ko26u")
 
 [node name="Draggable3" parent="." instance=ExtResource("2_02wlo")]
-position = Vector2(537, 551)
+position = Vector2(798, 587)
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable3"]
 scale = Vector2(2.03125, 2.03125)
@@ -49,7 +49,7 @@ position = Vector2(1026, 486)
 position = Vector2(1081, 492)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-26.5, 49.7057)
+position = Vector2(-26.5, 43.5)
 shape = SubResource("RectangleShape2D_cqjkv")
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
