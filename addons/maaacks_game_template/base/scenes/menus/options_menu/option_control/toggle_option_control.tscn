@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsxh6v7j0257h"]
+[gd_scene load_steps=6 format=3 uid="uid://bsxh6v7j0257h"]
 
 [ext_resource type="PackedScene" uid="uid://d7te75il06t7" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/option_control.tscn" id="1_8rnmo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxi25"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.976471, 0.945098, 0.647059, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygwdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y3xnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5var"]
 
 [node name="OptionControl" instance=ExtResource("1_8rnmo")]
 
 [node name="CheckButton" type="CheckButton" parent="." index="1"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_gxi25")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ygwdv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y3xnx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q5var")
