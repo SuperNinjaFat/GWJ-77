@@ -1,0 +1,149 @@
+[gd_scene load_steps=16 format=3 uid="uid://bwas1ppnasge"]
+
+[ext_resource type="Material" uid="uid://8nomgd8v4u7v" path="res://assets/models/office/carpet/carpet_material.tres" id="1_img74"]
+[ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_t2hfm"]
+[ext_resource type="PackedScene" uid="uid://cnjc5cvqurjji" path="res://assets/models/office/c_desk_long_U.tscn" id="2_ttmm6"]
+[ext_resource type="PackedScene" uid="uid://bdvo8nu2nks1j" path="res://assets/models/office/cubicle_small.tscn" id="3_3nus6"]
+[ext_resource type="PackedScene" uid="uid://cvbsh71rce7w3" path="res://assets/models/office/office_chair.tscn" id="3_3ryqq"]
+[ext_resource type="PackedScene" uid="uid://bp66ky87qgjrb" path="res://assets/models/office/c_desk_short.tscn" id="4_emyqg"]
+[ext_resource type="Material" uid="uid://caj1iyfbvigaw" path="res://assets/models/office/resources/office_chair/officeChair_grey_material.tres" id="4_xuerr"]
+[ext_resource type="PackedScene" uid="uid://evxqvqg8kyoy" path="res://assets/models/office/c_desk_short_L.tscn" id="5_s2qg1"]
+[ext_resource type="PackedScene" uid="uid://y4fqg6lciqh6" path="res://assets/models/office/recycle_bin.tscn" id="6_ytrgv"]
+[ext_resource type="PackedScene" uid="uid://c8ih7dguxv2wf" path="res://assets/models/office/waste_bin.tscn" id="7_h2vmc"]
+[ext_resource type="PackedScene" uid="uid://mjpdmx6yif56" path="res://assets/models/office/computer.tscn" id="9_72y6m"]
+[ext_resource type="PackedScene" uid="uid://ddltcw6qrvtev" path="res://assets/models/office/oblong_table.tscn" id="12_rdh3x"]
+[ext_resource type="PackedScene" uid="uid://bq50dart457xo" path="res://assets/models/office/xerox.tscn" id="13_vcudo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_313x5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5thc"]
+
+[node name="OfficeLevelGeometry" type="Node3D"]
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+material_override = ExtResource("1_img74")
+mesh = SubResource("PlaneMesh_313x5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 0.183013, -0.183013, 0, 0.707107, 0.707107, 0.258819, -0.683013, 0.683013, 0, 5.25108, 0)
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(4.43183, 0, 0, 0, 3.67807, 0, 0, 0, 0.288868, -3.93425, 1.71384, -2)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(4.43183, 0, 0, 0, 1.0783, 0, 0, 0, 0.288868, -0.96591, 3.00477, -2)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-5.42415e-07, 0, 0.289, 0, 3.678, 0, -12.409, 0, -1.26326e-08, -5.05585, 1.67726, 4)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-1.5605e-07, 0, 0.289, 0, 3.678, 0, -3.57, 0, -1.26326e-08, -4.41744, 1.69499, -3.86791)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(10.193, 0, 0, 0, 3.678, 0, 0, 0, 0.289, 5, 1.67726, -2)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(10.193, 0, 0, 0, 3.678, 0, 0, 0, 0.289, 0.615455, 1.67726, -5.63552)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(18.2152, 0, 0, 0, 2.55817, 0, 0, 0, 0.288868, 1.13938, -0.861, 8.1697)
+mesh = SubResource("BoxMesh_b5thc")
+skeleton = NodePath("../..")
+
+[node name="WorkArea" type="Node3D" parent="."]
+
+[node name="CubicleLarge" parent="WorkArea" instance=ExtResource("1_t2hfm")]
+skeleton = NodePath("../../GroundPlane")
+
+[node name="CDeskLongU" parent="WorkArea/CubicleLarge" instance=ExtResource("2_ttmm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.975, 3.81526, 0, 0.051182)
+
+[node name="OfficeChair2" parent="WorkArea/CubicleLarge" instance=ExtResource("3_3ryqq")]
+transform = Transform3D(-0.997143, 0, -0.0755357, 0, 1, 0, 0.0755357, 0, -0.997143, 1.47873, 0, 0.759908)
+material_override = ExtResource("4_xuerr")
+
+[node name="OfficeChair3" parent="WorkArea/CubicleLarge" instance=ExtResource("3_3ryqq")]
+transform = Transform3D(-0.717202, 0, 0.696864, 0, 1, 0, -0.696864, 0, -0.717202, 2.91288, 0, 0.961025)
+material_override = ExtResource("4_xuerr")
+
+[node name="OfficeChair4" parent="WorkArea/CubicleLarge" instance=ExtResource("3_3ryqq")]
+transform = Transform3D(0.846844, 0, 0.531842, 0, 1, 0, -0.531842, 0, 0.846844, 2.86229, 0, 2.01355)
+material_override = ExtResource("4_xuerr")
+
+[node name="OfficeChair5" parent="WorkArea/CubicleLarge" instance=ExtResource("3_3ryqq")]
+transform = Transform3D(0.956935, 0, -0.290302, 0, 1, 0, 0.290302, 0, 0.956935, 1.55307, 0, 2.15166)
+material_override = ExtResource("4_xuerr")
+
+[node name="Computer" parent="WorkArea/CubicleLarge" instance=ExtResource("9_72y6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46132, 0.640137, 0.249644)
+
+[node name="Computer4" parent="WorkArea/CubicleLarge" instance=ExtResource("9_72y6m")]
+transform = Transform3D(-0.999987, 0, 0.00514872, 0, 1, 0, -0.00514872, 0, -0.999987, 1.46132, 0.640137, 2.66982)
+
+[node name="Computer2" parent="WorkArea/CubicleLarge" instance=ExtResource("9_72y6m")]
+transform = Transform3D(0.658006, 0, -0.753012, 0, 1, 0, 0.753012, 0, 0.658006, 3.46707, 0.640137, 0.370674)
+
+[node name="Computer3" parent="WorkArea/CubicleLarge" instance=ExtResource("9_72y6m")]
+transform = Transform3D(-0.755979, 0, -0.654596, 0, 1, 0, 0.654596, 0, -0.755979, 3.46707, 0.640137, 2.60034)
+
+[node name="RecycleBin" parent="WorkArea/CubicleLarge" instance=ExtResource("6_ytrgv")]
+transform = Transform3D(0.991707, 0, -0.128519, 0, 1, 0, 0.128519, 0, 0.991707, 0.289943, 1.19209e-07, 0.928038)
+skeleton = NodePath("../../..")
+
+[node name="WasteBin" parent="WorkArea/CubicleLarge" instance=ExtResource("7_h2vmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336374, 1.19209e-07, 0.660903)
+skeleton = NodePath("../../..")
+
+[node name="LowerCubicleBlock" type="Node3D" parent="WorkArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.92102)
+
+[node name="CubicleSmall" parent="WorkArea/LowerCubicleBlock" instance=ExtResource("3_3nus6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.285405, 0, 0)
+
+[node name="CDeskShort" parent="WorkArea/LowerCubicleBlock/CubicleSmall" instance=ExtResource("4_emyqg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.91504, 0, 1.94017)
+
+[node name="CubicleSmall2" parent="WorkArea/LowerCubicleBlock" instance=ExtResource("3_3nus6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.80806, 0, 0)
+
+[node name="CDeskShortL" parent="WorkArea/LowerCubicleBlock/CubicleSmall2" instance=ExtResource("5_s2qg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9013, 0, 0.064126)
+
+[node name="CubicleSmall3" parent="WorkArea/LowerCubicleBlock" instance=ExtResource("3_3nus6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.91032, 0, 0)
+
+[node name="CDeskShort" parent="WorkArea/LowerCubicleBlock/CubicleSmall3" instance=ExtResource("4_emyqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95436, 0, 0.0495996)
+
+[node name="OblongTable" parent="WorkArea" instance=ExtResource("12_rdh3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80212, 0, 3.49929)
+skeleton = NodePath("../..")
+
+[node name="FreeStandingDesk" parent="WorkArea" instance=ExtResource("12_rdh3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.40979, 0, -1.13093)
+skeleton = NodePath("../..")
+
+[node name="OfficeChair" parent="WorkArea/FreeStandingDesk" instance=ExtResource("3_3ryqq")]
+transform = Transform3D(-0.901915, 0, 0.431913, 0, 1, 0, -0.431913, 0, -0.901915, -0.360704, -1.19209e-07, 0.880948)
+skeleton = NodePath("../../..")
+
+[node name="SupplyRoom" type="Node3D" parent="."]
+
+[node name="Xerox" parent="SupplyRoom" instance=ExtResource("13_vcudo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3485, 0, -4.90911)
+skeleton = NodePath("../..")
