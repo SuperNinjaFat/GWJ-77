@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbf1qjevsbr66"]
+[gd_scene load_steps=3 format=3 uid="uid://cbf1qjevsbr66"]
 
 [ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/common/draggable.gd" id="1_qf6f2"]
-[ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="2_p4gsj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_adxnn"]
 radius = 67.1193
 
 [node name="Draggable" type="CharacterBody2D" groups=["trash"]]
+z_index = 1
 position = Vector2(586, 215)
 input_pickable = true
 script = ExtResource("1_qf6f2")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("2_p4gsj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_adxnn")

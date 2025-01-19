@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc3oggyb8eoby"]
+
+[ext_resource type="Texture2D" uid="uid://dph7o2bsqgmm5" path="res://scenes/overworld/tasks/task_types/BrewCoffee/sink.png" id="1_putkm"]
+[ext_resource type="Texture2D" uid="uid://dh45rswr8tjaf" path="res://scenes/overworld/tasks/task_types/BrewCoffee/sink_water.png" id="2_yiml0"]
+
+[node name="Sink" type="Area2D"]
+
+[node name="Sink" type="Sprite2D" parent="."]
+texture = ExtResource("1_putkm")
+
+[node name="SinkWater" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(59, 11)
+texture = ExtResource("2_yiml0")

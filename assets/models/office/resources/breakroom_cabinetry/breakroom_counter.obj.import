@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr6nfaphc0ojk"
+path="res://.godot/imported/breakroom_counter.obj-4f676a52e9861133c4d3dda7fc96273f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/breakroom_counter.obj-4f676a52e9861133c4d3dda7fc96273f.mesh"]
+
+source_file="res://assets/models/office/resources/breakroom_cabinetry/breakroom_counter.obj"
+dest_files=["res://.godot/imported/breakroom_counter.obj-4f676a52e9861133c4d3dda7fc96273f.mesh", "res://.godot/imported/breakroom_counter.obj-4f676a52e9861133c4d3dda7fc96273f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

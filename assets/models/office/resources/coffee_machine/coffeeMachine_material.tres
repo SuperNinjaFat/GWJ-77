@@ -1,3 +1,19 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnuxomrrsua6y"]
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dnuxomrrsua6y"]
+
+[ext_resource type="Texture2D" uid="uid://c3r5gu56vhkh1" path="res://assets/models/office/resources/coffee_machine/tex_coffeeMaker_BaseColor.png" id="1_cf2s1"]
+[ext_resource type="Texture2D" uid="uid://carx6q2wfgx7n" path="res://assets/models/office/resources/coffee_machine/tex_coffeeMaker_MRA.png" id="2_lvb3m"]
+[ext_resource type="Texture2D" uid="uid://baqkpgttn7q01" path="res://assets/models/office/resources/coffee_machine/tex_coffeeMaker_Normal.png" id="3_oc5cb"]
 
 [resource]
+transparency = 1
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_cf2s1")
+metallic = 1.0
+metallic_texture = ExtResource("2_lvb3m")
+roughness_texture = ExtResource("2_lvb3m")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_oc5cb")
+ao_enabled = true
+ao_texture = ExtResource("2_lvb3m")
+ao_texture_channel = 2

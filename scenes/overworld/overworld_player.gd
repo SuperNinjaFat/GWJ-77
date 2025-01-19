@@ -9,16 +9,16 @@ func _physics_process(delta):
 		return
 
 	# animate
-	if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_right") || Input.is_action_pressed("move_left") || Input.is_action_pressed("move_up") || Input.is_action_pressed("move_down"):
 		get_node("AnimatedSprite3D").play("move")
 	else:
 		get_node("AnimatedSprite3D").play("idle")
 
 	# apply velocity with movement
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		velocity.x = SPEED
 		get_node("AnimatedSprite3D").flip_h = false
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("move_left"):
 		velocity.x = -SPEED
 		get_node("AnimatedSprite3D").flip_h = true
 	else:
@@ -26,9 +26,9 @@ func _physics_process(delta):
 	
 	# velocity.z = velocity.z
 
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_up"):
 		velocity.z = -SPEED
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("move_down"):
 		velocity.z = SPEED
 	else:
 		velocity.z = 0

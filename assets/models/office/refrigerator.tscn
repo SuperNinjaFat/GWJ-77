@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4bvskchk5w1n"]
+
+[ext_resource type="ArrayMesh" uid="uid://fw5can7xrls8" path="res://assets/models/office/resources/refrigerator/refrigerator.obj" id="1_hs4rv"]
+[ext_resource type="Material" uid="uid://cn7g5ahc3cywt" path="res://assets/models/office/resources/refrigerator/refrigerator_material.tres" id="2_nvkrm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c537"]
+size = Vector3(1.0564, 1.81264, 0.733398)
+
+[node name="Refrigerator" type="MeshInstance3D"]
+mesh = ExtResource("1_hs4rv")
+surface_material_override/0 = ExtResource("2_nvkrm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000610352, 0.907143, 0.372559)
+shape = SubResource("BoxShape3D_0c537")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfqx50s1sy0pp"]
+
+[ext_resource type="Texture2D" uid="uid://bf6rplcoufrdg" path="res://scenes/overworld/tasks/task_types/BrewCoffee/grounds.png" id="1_u68no"]
+
+[node name="Grounds" type="Area2D"]
+
+[node name="Grounds" type="Sprite2D" parent="."]
+texture = ExtResource("1_u68no")

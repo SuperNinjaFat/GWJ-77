@@ -1,0 +1,138 @@
+[gd_scene load_steps=4 format=3 uid="uid://jcfp28ueehs4"]
+
+[ext_resource type="Texture2D" uid="uid://cw1b12cgx6rr4" path="res://scenes/overworld/tasks/task_types/TimeEntry/sticky-note.png" id="1_of6rl"]
+[ext_resource type="Script" path="res://scenes/overworld/tasks/task_types/TimeEntry/time_entry_ui.gd" id="1_y1dtg"]
+[ext_resource type="Texture2D" uid="uid://wcby4eh3mn3w" path="res://scenes/overworld/tasks/task_types/TimeEntry/task-monitor.png" id="2_5f0ao"]
+
+[node name="TimeEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1dtg")
+
+[node name="Sticky-note" type="Sprite2D" parent="."]
+position = Vector2(971, 372)
+texture = ExtResource("1_of6rl")
+
+[node name="Label" type="Label" parent="Sticky-note"]
+offset_left = -116.0
+offset_top = -95.0
+offset_right = 103.0
+offset_bottom = -43.0
+text = "- Filed Reports"
+
+[node name="Label2" type="Label" parent="Sticky-note"]
+offset_left = -112.0
+offset_top = 23.0
+offset_right = -49.0
+offset_bottom = 63.0
+text = "9:30"
+
+[node name="Label3" type="Label" parent="Sticky-note"]
+offset_left = 30.0
+offset_top = 26.0
+offset_right = 72.0
+offset_bottom = 52.0
+text = "11:00"
+
+[node name="Label4" type="Label" parent="Sticky-note"]
+offset_left = -26.0
+offset_top = 24.0
+offset_right = 14.0
+offset_bottom = 50.0
+text = "-"
+
+[node name="Task-monitor" type="Sprite2D" parent="."]
+position = Vector2(423, 374)
+texture = ExtResource("2_5f0ao")
+
+[node name="Label" type="Label" parent="Task-monitor"]
+offset_left = -99.0
+offset_top = -165.0
+offset_right = 96.0
+offset_bottom = -134.0
+text = "Time Entry"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="OptionButton" type="OptionButton" parent="Task-monitor"]
+offset_left = -97.0
+offset_top = -121.0
+offset_right = 97.0
+offset_bottom = -59.0
+item_count = 4
+popup/item_0/text = "Filed Reports"
+popup/item_1/text = "Ate Donuts"
+popup/item_1/id = 1
+popup/item_2/text = "Did Nothing"
+popup/item_2/id = 2
+popup/item_3/text = "Give Boss Rundown"
+popup/item_3/id = 3
+
+[node name="Button" type="Button" parent="Task-monitor"]
+offset_left = -188.0
+offset_top = 28.0
+offset_right = -57.0
+offset_bottom = 75.0
+text = "Reset"
+
+[node name="Button2" type="Button" parent="Task-monitor"]
+offset_left = 58.0
+offset_top = 28.0
+offset_right = 189.0
+offset_bottom = 75.0
+text = "Submit"
+
+[node name="OptionButton2" type="OptionButton" parent="Task-monitor"]
+offset_left = -118.0
+offset_top = -36.0
+offset_right = -30.0
+offset_bottom = 1.0
+item_count = 8
+popup/item_0/text = "8:00"
+popup/item_1/text = "8:30"
+popup/item_1/id = 1
+popup/item_2/text = "9:00"
+popup/item_2/id = 2
+popup/item_3/text = "9:30"
+popup/item_3/id = 3
+popup/item_4/text = "10:00"
+popup/item_4/id = 4
+popup/item_5/text = "10:30"
+popup/item_5/id = 5
+popup/item_6/text = "11:00"
+popup/item_6/id = 6
+popup/item_7/text = "11:30"
+popup/item_7/id = 7
+
+[node name="OptionButton3" type="OptionButton" parent="Task-monitor"]
+offset_left = 28.0
+offset_top = -36.0
+offset_right = 116.0
+offset_bottom = 1.0
+item_count = 8
+popup/item_0/text = "8:00"
+popup/item_1/text = "8:30"
+popup/item_1/id = 1
+popup/item_2/text = "9:00"
+popup/item_2/id = 2
+popup/item_3/text = "9:30"
+popup/item_3/id = 3
+popup/item_4/text = "10:00"
+popup/item_4/id = 4
+popup/item_5/text = "10:30"
+popup/item_5/id = 5
+popup/item_6/text = "11:00"
+popup/item_6/id = 6
+popup/item_7/text = "11:30"
+popup/item_7/id = 7
+
+[node name="Label2" type="Label" parent="Task-monitor"]
+offset_left = -9.0
+offset_top = -35.0
+offset_right = 31.0
+offset_bottom = -9.0
+text = "->"

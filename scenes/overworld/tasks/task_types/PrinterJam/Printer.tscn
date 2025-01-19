@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu4hmlrtijo61"]
+
+[ext_resource type="Texture2D" uid="uid://0vrlpbab7pwp" path="res://scenes/overworld/tasks/task_types/PrinterJam/printer.png" id="1_8n7l4"]
+
+[node name="Printer" type="Area2D"]
+
+[node name="Printer" type="Sprite2D" parent="."]
+texture = ExtResource("1_8n7l4")

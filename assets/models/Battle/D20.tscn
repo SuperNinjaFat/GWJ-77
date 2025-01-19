@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ctkuga56dqt"]
+
+[ext_resource type="Material" uid="uid://d3mtasokfmn5u" path="res://assets/models/Battle/Resources/Dice/D20_material.tres" id="1_b3lqs"]
+[ext_resource type="ArrayMesh" uid="uid://dd240wpdk71o8" path="res://assets/models/Battle/Resources/Dice/d20.obj" id="1_o65pc"]
+
+[node name="D20" type="MeshInstance3D"]
+material_override = ExtResource("1_b3lqs")
+mesh = ExtResource("1_o65pc")
