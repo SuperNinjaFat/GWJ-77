@@ -12,3 +12,8 @@ func _on_interact(index):
 	var activity_ui: TimeEntryUI = activity1.instantiate()
 	activity_ui._task = self
 	TaskManager.add_ui(activity_ui)
+
+func complete():
+	completed = true
+	_points[0].disableInteraction()
+	TaskManager.remove_ui()

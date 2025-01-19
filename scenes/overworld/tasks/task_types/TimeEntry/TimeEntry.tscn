@@ -114,10 +114,12 @@ theme_override_font_sizes/font_size = 48
 text = "-"
 
 [node name="TaskName" type="Label" parent="Sticky-note/MarginContainer/StickyNoteContent/Task"]
+custom_minimum_size = Vector2(300, 135)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wfnod")
 theme_override_font_sizes/font_size = 48
 text = "Filed Reports"
+autowrap_mode = 2
 
 [node name="Times" type="HBoxContainer" parent="Sticky-note/MarginContainer/StickyNoteContent"]
 layout_mode = 2
@@ -187,14 +189,6 @@ uppercase = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
-item_count = 4
-popup/item_0/text = "Filed Reports"
-popup/item_1/text = "Ate Donuts"
-popup/item_1/id = 1
-popup/item_2/text = "Did Nothing"
-popup/item_2/id = 2
-popup/item_3/text = "Give Boss Rundown"
-popup/item_3/id = 3
 
 [node name="TimeButtons" type="HBoxContainer" parent="Task-monitor/ContentContainer/Content"]
 layout_mode = 2
@@ -204,22 +198,6 @@ theme_override_constants/separation = 30
 [node name="StartTime" type="OptionButton" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
 custom_minimum_size = Vector2(80, 35)
 layout_mode = 2
-item_count = 8
-popup/item_0/text = "8:00"
-popup/item_1/text = "8:30"
-popup/item_1/id = 1
-popup/item_2/text = "9:00"
-popup/item_2/id = 2
-popup/item_3/text = "9:30"
-popup/item_3/id = 3
-popup/item_4/text = "10:00"
-popup/item_4/id = 4
-popup/item_5/text = "10:30"
-popup/item_5/id = 5
-popup/item_6/text = "11:00"
-popup/item_6/id = 6
-popup/item_7/text = "11:30"
-popup/item_7/id = 7
 
 [node name="->" type="TextureRect" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
 layout_mode = 2
@@ -230,22 +208,6 @@ stretch_mode = 2
 [node name="EndTime" type="OptionButton" parent="Task-monitor/ContentContainer/Content/TimeButtons"]
 custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
-item_count = 8
-popup/item_0/text = "8:00"
-popup/item_1/text = "8:30"
-popup/item_1/id = 1
-popup/item_2/text = "9:00"
-popup/item_2/id = 2
-popup/item_3/text = "9:30"
-popup/item_3/id = 3
-popup/item_4/text = "10:00"
-popup/item_4/id = 4
-popup/item_5/text = "10:30"
-popup/item_5/id = 5
-popup/item_6/text = "11:00"
-popup/item_6/id = 6
-popup/item_7/text = "11:30"
-popup/item_7/id = 7
 
 [node name="TaskActionButtons" type="HBoxContainer" parent="Task-monitor/ContentContainer/Content"]
 layout_mode = 2
@@ -271,3 +233,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p3m4i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f6slj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n2d06")
 text = "Submit"
+
+[connection signal="pressed" from="Task-monitor/ContentContainer/Content/TaskActionButtons/Reset" to="." method="_on_reset_pressed"]
+[connection signal="button_up" from="Task-monitor/ContentContainer/Content/TaskActionButtons/Submit" to="." method="_on_submit_button_up"]

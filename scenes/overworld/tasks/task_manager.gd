@@ -35,7 +35,7 @@ func initialize_tasks() -> void:
 			TASK_TYPE.COFFEE:
 				tasks.append(BrewCoffee.new([task_point]))
 			TASK_TYPE.WORKSTATION:
-				if randi() % 1 == 0:
+				if randi() % 2 == 0:
 					tasks.append(CleanUp.new([task_point]))
 				else:
 					tasks.append(TimeEntry.new([task_point]))
