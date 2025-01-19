@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=33 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bb3dnen65tocv" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_ryg2s"]
@@ -10,9 +10,13 @@
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_pdiij"]
 [ext_resource type="Texture2D" uid="uid://6fyqg24svetp" path="res://assets/ui/backgrounds/computer_menu_img.png" id="7_citvi"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_j7612"]
+[ext_resource type="Texture2D" uid="uid://cc1dd6eh4mnl" path="res://assets/ui/backgrounds/cup.png" id="7_u1o2d"]
 [ext_resource type="Texture2D" uid="uid://dkim2l0cyx0jb" path="res://assets/ui/ui_sprites/icon_sprite_sheet.png" id="11_mdgle"]
 [ext_resource type="FontFile" uid="uid://b5kqacgxl45d2" path="res://assets/ui/fonts/Habbo.ttf" id="12_wgub5"]
 [ext_resource type="PackedScene" uid="uid://bl1swj81khre3" path="res://scenes/menus/main_menu/butterfly_button.tscn" id="13_2g1tp"]
+[ext_resource type="Texture2D" uid="uid://c6ylvrkw4khqm" path="res://assets/ui/ui_sprites/error_message_box.png" id="14_dlyrt"]
+[ext_resource type="Texture2D" uid="uid://d15dv6pq7oeew" path="res://assets/ui/ui_sprites/error_icon.png" id="15_2kvqc"]
+[ext_resource type="Texture2D" uid="uid://lxmfm2ivapbd" path="res://assets/ui/backgrounds/calendar.png" id="17_nmyic"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgygj"]
 texture = ExtResource("11_mdgle")
@@ -101,6 +105,16 @@ grow_vertical = 2
 texture = ExtResource("6_igcfh")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(1110, 560)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_u1o2d")
+
+[node name="Calendar" type="Sprite2D" parent="."]
+position = Vector2(127, 225)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_nmyic")
 
 [node name="BackgroundTextureComputer" type="TextureRect" parent="."]
 layout_mode = 1
@@ -372,9 +386,12 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
 
 [node name="FlowControlContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 331
 theme_override_constants/margin_top = 16
@@ -418,8 +435,75 @@ theme_override_font_sizes/font_size = 30
 text = "BACK"
 horizontal_alignment = 1
 
+[node name="TitleLogo" type="Sprite2D" parent="."]
+position = Vector2(642, 232)
+texture = ExtResource("14_dlyrt")
+
+[node name="ContentContainer" type="MarginContainer" parent="TitleLogo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -140.0
+offset_right = -225.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = -100
+theme_override_constants/margin_bottom = -530
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleLogo/ContentContainer"]
+layout_mode = 2
+
+[node name="SystemMessageContainer" type="MarginContainer" parent="TitleLogo/ContentContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="TitleLogo/ContentContainer/VBoxContainer/SystemMessageContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0.988235, 0.988235, 1)
+text = "System message"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleLogo/ContentContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="ErrorIcon" type="TextureRect" parent="TitleLogo/ContentContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("15_2kvqc")
+stretch_mode = 2
+
+[node name="File" type="Label" parent="TitleLogo/ContentContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "File: [A Bug's Work-Life Balance] 
+was not able to close."
+autowrap_mode = 2
+
+[node name="ContinueMargin" type="MarginContainer" parent="TitleLogo/ContentContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = -120
+theme_override_constants/margin_top = 70
+
+[node name="ContinueButton" type="Button" parent="TitleLogo/ContentContainer/VBoxContainer/ContinueMargin"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="FlowControlContainer/FlowControl/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TitleLogo/ContentContainer/VBoxContainer/ContinueMargin/ContinueButton" to="." method="_on_continue_button_pressed"]

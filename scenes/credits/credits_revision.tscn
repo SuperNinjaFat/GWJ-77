@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn2k0adyxnjmv"]
+[gd_scene load_steps=18 format=3 uid="uid://bn2k0adyxnjmv"]
 
 [ext_resource type="Texture2D" uid="uid://bens18hl4h26y" path="res://assets/ui/backgrounds/main_menu_bg.png" id="1_irpdw"]
+[ext_resource type="Texture2D" uid="uid://cc1dd6eh4mnl" path="res://assets/ui/backgrounds/cup.png" id="2_6nwwr"]
 [ext_resource type="Texture2D" uid="uid://6fyqg24svetp" path="res://assets/ui/backgrounds/computer_menu_img.png" id="2_im3cx"]
+[ext_resource type="Texture2D" uid="uid://lxmfm2ivapbd" path="res://assets/ui/backgrounds/calendar.png" id="3_da10e"]
 [ext_resource type="Texture2D" uid="uid://b8nmpom3b2xf3" path="res://assets/ui/ui_sprites/wordart.png" id="3_lag2e"]
 [ext_resource type="PackedScene" uid="uid://bl1swj81khre3" path="res://scenes/menus/main_menu/butterfly_button.tscn" id="4_wbwri"]
 
@@ -121,6 +123,16 @@ grow_vertical = 2
 texture = ExtResource("1_irpdw")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(1110, 560)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_6nwwr")
+
+[node name="Calendar" type="Sprite2D" parent="."]
+position = Vector2(127, 225)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_da10e")
 
 [node name="BackgroundTextureComputer" type="TextureRect" parent="."]
 layout_mode = 1

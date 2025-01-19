@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3dfvadsm106"]
+
+[ext_resource type="Texture2D" uid="uid://c6ylvrkw4khqm" path="res://assets/ui/ui_sprites/error_message_box.png" id="1_chfnv"]
+[ext_resource type="Texture2D" uid="uid://d15dv6pq7oeew" path="res://assets/ui/ui_sprites/error_icon.png" id="2_op51g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58koq"]
+texture = ExtResource("1_chfnv")
+texture_margin_left = 10.0
+texture_margin_top = 69.0
+texture_margin_right = 12.0
+texture_margin_bottom = 22.0
+region_rect = Rect2(0, 0, 450, 280)
+
+[node name="TitleIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 450.0
+offset_bottom = 300.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_58koq")
+
+[node name="ContentContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -70
+theme_override_constants/margin_right = -100
+theme_override_constants/margin_bottom = -180
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="SystemMessageContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer/SystemMessageContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0.988235, 0.988235, 1)
+text = "System message"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="ErrorIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_op51g")
+stretch_mode = 2
+
+[node name="File" type="Label" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "File: [A Bug's Work-Life Balance] 
+was not able to close."
+autowrap_mode = 2
+
+[node name="ContinueMargin" type="MarginContainer" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = -120
+theme_override_constants/margin_top = 70
+
+[node name="Continue" type="Button" parent="CanvasLayer/PanelContainer/ContentContainer/VBoxContainer/ContinueMargin"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Continue"
