@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxdr3xgtkufg2"]
+[gd_scene load_steps=7 format=3 uid="uid://cxdr3xgtkufg2"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/levels/level_office.gd" id="1_4q1b5"]
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
+
 [ext_resource type="PackedScene" uid="uid://bwas1ppnasge" path="res://scenes/game_scene/levels/office_level_geometry.tscn" id="5_af2n0"]
+
+[ext_resource type="AudioStream" uid="uid://bkqo7hlbgdcv8" path="res://assets/audio/music/GWJ77 Overworld.mp3" id="5_vrd4i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
 
 [node name="Office" type="Node3D"]
 script = ExtResource("1_4q1b5")
@@ -39,3 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909164, 0, 2.83518)
 task_types = Array[int]([0])
 
 [node name="OfficeLevelGeometry" parent="." instance=ExtResource("5_af2n0")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vrd4i")
+
