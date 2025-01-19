@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://2qy7yttoo8dx"]
+
+[ext_resource type="Texture2D" uid="uid://b5fx2qh38x1y6" path="res://assets/models/office/resources/shelving/tex_shelving_BaseColor.png" id="1_i4mme"]
+[ext_resource type="Texture2D" uid="uid://b4oa27jky20tp" path="res://assets/models/office/resources/shelving/tex_shelving_MRA.png" id="2_4jtij"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_i4mme")
+metallic = 1.0
+metallic_texture = ExtResource("2_4jtij")
+roughness_texture = ExtResource("2_4jtij")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_4jtij")
+ao_texture_channel = 2

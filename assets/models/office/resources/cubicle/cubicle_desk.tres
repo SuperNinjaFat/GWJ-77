@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dlhcnolba3r0d"]
+
+[ext_resource type="Texture2D" uid="uid://dlfxrcqquamho" path="res://assets/models/office/resources/cubicle/tex_cubicle_desks_BaseColor.png" id="1_51g2e"]
+[ext_resource type="Texture2D" uid="uid://c4i6us7f4earo" path="res://assets/models/office/resources/cubicle/tex_cubicle_desks_MRA.png" id="2_3fv1u"]
+
+[resource]
+albedo_texture = ExtResource("1_51g2e")
+metallic = 1.0
+metallic_texture = ExtResource("2_3fv1u")
+roughness_texture = ExtResource("2_3fv1u")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_3fv1u")
+ao_texture_channel = 2

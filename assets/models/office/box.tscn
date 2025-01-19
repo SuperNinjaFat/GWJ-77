@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bryq5o1hyvf2e"]
+
+[ext_resource type="ArrayMesh" uid="uid://bclgyta7m5fdj" path="res://assets/models/office/resources/boxesAndPaper/boxLid.obj" id="1_c5l6p"]
+[ext_resource type="Material" uid="uid://bfjvvnyu3nahg" path="res://assets/models/office/resources/boxesAndPaper/boxAndPaper_material.tres" id="1_te8a0"]
+[ext_resource type="PackedScene" uid="uid://bimtxc581h67w" path="res://assets/models/office/boxOpen.tscn" id="2_r8u1f"]
+
+[node name="Box" type="Node3D"]
+
+[node name="Lid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163902, 0)
+material_override = ExtResource("1_te8a0")
+mesh = ExtResource("1_c5l6p")
+
+[node name="BoxOpen" parent="." instance=ExtResource("2_r8u1f")]
