@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnvlbl200234l"]
+
+[ext_resource type="Texture2D" uid="uid://c4hftdulbniap" path="res://assets/sprites/Office/Sheet_2.png" id="1_wbku4"]
+
+[node name="PostIt_3" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -1.0
+texture = ExtResource("1_wbku4")
+region_enabled = true
+region_rect = Rect2(62.8018, 276.317, 203.775, 210.549)

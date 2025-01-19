@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk25f0xjcc6jh"]
+
+[ext_resource type="Material" uid="uid://dakvm0pemxstq" path="res://assets/models/office/resources/break_chair/breakroom_chair_material.tres" id="1_2dqti"]
+[ext_resource type="ArrayMesh" uid="uid://hp6ja0q5w5gf" path="res://assets/models/office/resources/break_chair/break_chair.obj" id="2_1conv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp67y"]
+size = Vector3(0.420654, 0.442322, 0.656738)
+
+[node name="BreakroomChair" type="MeshInstance3D"]
+material_override = ExtResource("1_2dqti")
+mesh = ExtResource("2_1conv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0.233795, 0.0983887)
+shape = SubResource("BoxShape3D_wp67y")

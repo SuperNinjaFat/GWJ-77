@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c6x31tyom8cnk"]
+
+[ext_resource type="Texture2D" uid="uid://cek5ca1t6gers" path="res://assets/models/office/resources/potted_plants/tex_pottedPlant_BaseColor.png" id="1_2aj27"]
+[ext_resource type="Texture2D" uid="uid://dw6mssvfa3djk" path="res://assets/models/office/resources/potted_plants/tex_pottedPlant_MRA.png" id="2_x4oic"]
+[ext_resource type="Texture2D" uid="uid://culpmox5lcn1t" path="res://assets/models/office/resources/potted_plants/tex_pottedPlant_Normal.png" id="3_grh1y"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_2aj27")
+metallic = 1.0
+metallic_texture = ExtResource("2_x4oic")
+roughness_texture = ExtResource("2_x4oic")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_grh1y")
+ao_enabled = true
+ao_texture = ExtResource("2_x4oic")
+ao_texture_channel = 2

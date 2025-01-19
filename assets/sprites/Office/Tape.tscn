@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk1myd3bm6x0x"]
+
+[ext_resource type="Texture2D" uid="uid://c4hftdulbniap" path="res://assets/sprites/Office/Sheet_2.png" id="1_xcm8d"]
+
+[node name="Tape" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -1.0
+texture = ExtResource("1_xcm8d")
+region_enabled = true
+region_rect = Rect2(558.851, 44.6044, 362.392, 181.761)

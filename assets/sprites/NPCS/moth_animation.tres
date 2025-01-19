@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cu4bt57utadjo"]
+
+[ext_resource type="Texture2D" uid="uid://b0mmw5kettmit" path="res://assets/sprites/NPCS/coworkers_normal_sheet_1.png" id="1_5smr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fj15"]
+atlas = ExtResource("1_5smr0")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leupk"]
+atlas = ExtResource("1_5smr0")
+region = Rect2(512, 0, 512, 512)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_8fj15")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_leupk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

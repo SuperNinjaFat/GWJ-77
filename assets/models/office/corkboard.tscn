@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv6o43j7wwt3g"]
+
+[ext_resource type="Material" uid="uid://b7byw5ws6ytjr" path="res://assets/models/office/resources/corkboard/corkboard_material.tres" id="1_wbu5y"]
+[ext_resource type="ArrayMesh" uid="uid://cqlopu7q2gecu" path="res://assets/models/office/resources/corkboard/corkboard.obj" id="2_8orqr"]
+
+[node name="Corkboard" type="MeshInstance3D"]
+material_override = ExtResource("1_wbu5y")
+mesh = ExtResource("2_8orqr")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpr3vioekg85y"]
+
+[ext_resource type="Texture2D" uid="uid://ejmrth732g44" path="res://assets/sprites/Office/Sheet_1.png" id="1_raypj"]
+
+[node name="PenBlack" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -2.0
+texture = ExtResource("1_raypj")
+region_enabled = true
+region_rect = Rect2(166.395, 19.3359, 53.2751, 262.277)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c75rhu16oqxa2"]
+
+[ext_resource type="Material" uid="uid://cxy2oqqf0k44b" path="res://assets/models/office/resources/windows/windows_material.tres" id="1_mx2dy"]
+[ext_resource type="ArrayMesh" uid="uid://co0vlkx0kn7l2" path="res://assets/models/office/resources/windows/window.obj" id="2_aw7xy"]
+
+[node name="Window" type="MeshInstance3D"]
+material_override = ExtResource("1_mx2dy")
+mesh = ExtResource("2_aw7xy")
