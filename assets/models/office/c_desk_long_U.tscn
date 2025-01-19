@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnjc5cvqurjji"]
+
+[ext_resource type="Material" uid="uid://dlhcnolba3r0d" path="res://assets/models/office/resources/cubicle/cubicle_desk.tres" id="1_re2jg"]
+[ext_resource type="ArrayMesh" uid="uid://dhrjwxcgrgm0a" path="res://assets/models/office/resources/cubicle/c_desk_long_U.obj" id="2_dkmd8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fp1m"]
+size = Vector3(3.74011, 0.197388, 0.413757)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e7rn"]
+size = Vector3(0.418945, 0.197144, 2.89752)
+
+[node name="CDeskLongU" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.975, 0, 0, 0)
+material_override = ExtResource("1_re2jg")
+mesh = ExtResource("2_dkmd8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8819, 0.541443, 0.211639)
+shape = SubResource("BoxShape3D_5fp1m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8819, 0.541443, 2.6868)
+shape = SubResource("BoxShape3D_5fp1m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.221191, 0.5401, 1.45468)
+shape = SubResource("BoxShape3D_5e7rn")

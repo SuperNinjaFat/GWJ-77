@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp66ky87qgjrb"]
+
+[ext_resource type="Material" uid="uid://dlhcnolba3r0d" path="res://assets/models/office/resources/cubicle/cubicle_desk.tres" id="1_3str1"]
+[ext_resource type="ArrayMesh" uid="uid://p5lohp160cce" path="res://assets/models/office/resources/cubicle/c_desk_short.obj" id="1_t037l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnt21"]
+size = Vector3(1.92883, 0.169464, 0.453735)
+
+[node name="CDeskShort" type="MeshInstance3D"]
+material_override = ExtResource("1_3str1")
+mesh = ExtResource("1_t037l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969177, 0.555038, 0.208313)
+shape = SubResource("BoxShape3D_xnt21")
