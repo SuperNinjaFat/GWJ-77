@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bwas1ppnasge"]
+[gd_scene load_steps=63 format=3 uid="uid://bwas1ppnasge"]
 
 [ext_resource type="Material" uid="uid://8nomgd8v4u7v" path="res://assets/models/office/carpet/carpet_material.tres" id="1_img74"]
 [ext_resource type="PackedScene" uid="uid://tgxfgfhsqr66" path="res://assets/models/office/cubicle_large.tscn" id="1_t2hfm"]
@@ -51,6 +51,8 @@
 [ext_resource type="PackedScene" uid="uid://bpr3vioekg85y" path="res://assets/sprites/Office/Pen_Black.tscn" id="48_fl8hg"]
 [ext_resource type="PackedScene" uid="uid://0hervn8uepif" path="res://assets/sprites/Office/Pen_Blue.tscn" id="49_ypmav"]
 [ext_resource type="PackedScene" uid="uid://krkub147fcuq" path="res://assets/sprites/Office/Pen_Red.tscn" id="50_wk8oa"]
+[ext_resource type="PackedScene" uid="uid://lvde4r17w7f6" path="res://assets/sprites/NPCS/coworker_normal_moth.tscn" id="52_6yugj"]
+[ext_resource type="PackedScene" uid="uid://dcq8furnonwy3" path="res://assets/sprites/NPCS/coworker_normal_weevil.tscn" id="53_tepey"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_313x5"]
 
@@ -894,3 +896,9 @@ skeleton = NodePath("../..")
 [node name="BreakroomChair3" parent="BossOffice" instance=ExtResource("34_13j6w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.590031, 0.0735838, 2.74459)
 skeleton = NodePath("../..")
+
+[node name="CoworkerNormalMoth" parent="." instance=ExtResource("52_6yugj")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 2.57297, 0.891789, 3.52574)
+
+[node name="CoworkerNormalWeevil" parent="." instance=ExtResource("53_tepey")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -2.69091, 0.897396, -4.26037)
