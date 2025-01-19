@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bee3micsvgvrb"]
+
+[ext_resource type="ArrayMesh" uid="uid://gklc3vkl674t" path="res://assets/models/office/resources/potted_plants/pottedPlant_1.obj" id="1_b8b8i"]
+[ext_resource type="Material" uid="uid://c6x31tyom8cnk" path="res://assets/models/office/resources/potted_plants/pottedPlant_material.tres" id="1_bqhn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ygyv"]
+size = Vector3(0.409607, 0.393677, 0.403809)
+
+[node name="PottedPlant1" type="MeshInstance3D"]
+material_override = ExtResource("1_bqhn8")
+mesh = ExtResource("1_b8b8i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000823975, 0.192932, -0.00219727)
+shape = SubResource("BoxShape3D_1ygyv")
