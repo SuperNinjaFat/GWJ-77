@@ -6,6 +6,8 @@ extends Control
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
 
+@onready var title_logo: Sprite2D = $TitleLogo
+
 var options_scene
 var credits_scene
 var sub_menu
@@ -93,3 +95,8 @@ func _on_credits_end_reached():
 
 func _on_back_button_pressed():
 	_close_sub_menu()
+
+
+func _on_continue_button_pressed() -> void:
+	title_logo.visible = false
+	pass # Replace with function body.
