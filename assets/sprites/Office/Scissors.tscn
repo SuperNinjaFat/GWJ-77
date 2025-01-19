@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://thtuchw0d3um"]
+
+[ext_resource type="Texture2D" uid="uid://c4hftdulbniap" path="res://assets/sprites/Office/Sheet_2.png" id="1_5246a"]
+
+[node name="Scissors" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -1.0
+texture = ExtResource("1_5246a")
+region_enabled = true
+region_rect = Rect2(520.467, 283.377, 452.144, 198.13)
