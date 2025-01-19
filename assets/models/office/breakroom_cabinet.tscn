@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwfhumjai6jg1"]
+
+[ext_resource type="Material" uid="uid://p8df2aqeray3" path="res://assets/models/office/resources/breakroom_cabinetry/breakroom_counters_material.tres" id="1_bmhcy"]
+[ext_resource type="ArrayMesh" uid="uid://3hdifrwv4vhd" path="res://assets/models/office/resources/breakroom_cabinetry/breakroom_cabinet.obj" id="2_nb62x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rtgkm"]
+size = Vector3(1.08685, 0.660767, 0.591553)
+
+[node name="BreakroomCabinet" type="MeshInstance3D"]
+material_override = ExtResource("1_bmhcy")
+mesh = ExtResource("2_nb62x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00234985, 1.86786, 0.293579)
+shape = SubResource("BoxShape3D_rtgkm")

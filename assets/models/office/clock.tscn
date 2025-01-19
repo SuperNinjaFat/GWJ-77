@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddfid8dr2olds"]
+
+[ext_resource type="Material" uid="uid://cp4fwjvrvy852" path="res://assets/models/office/resources/clock/clock_material.tres" id="1_qusji"]
+[ext_resource type="ArrayMesh" uid="uid://br74hs8woli68" path="res://assets/models/office/resources/clock/clock.obj" id="2_ugoa3"]
+
+[node name="Clock" type="MeshInstance3D"]
+material_override = ExtResource("1_qusji")
+mesh = ExtResource("2_ugoa3")

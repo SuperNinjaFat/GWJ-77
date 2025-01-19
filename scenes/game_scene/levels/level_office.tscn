@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ctpq0wqq86qs6" path="res://icon.png" id="1_wo4ex"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
+
+[ext_resource type="PackedScene" uid="uid://bwas1ppnasge" path="res://scenes/game_scene/levels/office_level_geometry.tscn" id="5_af2n0"]
+
 [ext_resource type="AudioStream" uid="uid://bkqo7hlbgdcv8" path="res://assets/audio/music/GWJ77 Overworld.mp3" id="5_vrd4i"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5bs6c"]
@@ -18,32 +21,30 @@ sorting_offset = -1.0
 texture = ExtResource("1_wo4ex")
 
 [node name="Player" parent="." instance=ExtResource("2_0tn4t")]
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.726431, 0.68724, 0, -0.68724, 0.726431, 0, 8.16328, 6.96713)
-
-[node name="GroundPlane" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.99997, 0.0221452, -0.00568501, -0.0221451, 9.99998, 0.000160103, 0.00568535, -0.000147471, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_5bs6c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.57793)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.911948, 0, -0.410305, 0.361159, 0.474564, 0.802716, 0.194716, -0.880221, 0.432778, 0, 9.78683, 0)
+light_energy = 2.0
 
 [node name="TaskPoint" parent="." instance=ExtResource("4_yqhrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70577, 0, -5.09813)
 task_types = Array[int]([1])
 
 [node name="TaskPoint2" parent="." instance=ExtResource("4_yqhrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34011, 0, -7.25638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40827, 0, -4.2604)
 task_types = Array[int]([2])
 
 [node name="TaskPoint3" parent="." instance=ExtResource("4_yqhrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.60286, 0, 2.76563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13718, 0, 2.76563)
 task_types = Array[int]([0])
 
 [node name="TaskPoint4" parent="." instance=ExtResource("4_yqhrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37484, 0, 2.83518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909164, 0, 2.83518)
 task_types = Array[int]([0])
+
+[node name="OfficeLevelGeometry" parent="." instance=ExtResource("5_af2n0")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vrd4i")
+
