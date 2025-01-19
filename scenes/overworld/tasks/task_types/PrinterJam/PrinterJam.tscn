@@ -21,13 +21,13 @@ script = ExtResource("1_ffp21")
 position = Vector2(635, 347)
 
 [node name="JammedPaper" parent="." instance=ExtResource("2_wirm6")]
-position = Vector2(655, 326)
+position = Vector2(655, 346)
 
 [node name="Cartridge" parent="." instance=ExtResource("3_c4vv3")]
-position = Vector2(658, 327)
+position = Vector2(659, 338)
 
 [node name="PrinterDoor" parent="." instance=ExtResource("2_de2vl")]
-position = Vector2(636, 347)
+position = Vector2(638, 363)
 
 [node name="IndicatorLight" parent="." instance=ExtResource("5_px00n")]
 position = Vector2(663, 236)

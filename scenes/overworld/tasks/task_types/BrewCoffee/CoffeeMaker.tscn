@@ -11,14 +11,14 @@
 texture = ExtResource("1_udkf7")
 
 [node name="CoffeemakerGroundslid" type="Sprite2D" parent="."]
-position = Vector2(-41, -88)
+position = Vector2(-41, -98)
 texture = ExtResource("2_bggug")
 
 [node name="CoffeemakerWaterlid" type="Sprite2D" parent="."]
-position = Vector2(65, -76)
+position = Vector2(50, -96)
 texture = ExtResource("3_7542q")
 
 [node name="CoffeemakerWaterindicator" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(100, -12)
+position = Vector2(43, -37)
 texture = ExtResource("4_4ia4o")

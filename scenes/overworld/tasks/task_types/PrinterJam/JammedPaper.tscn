@@ -5,5 +5,4 @@
 [node name="JammedPaper" type="Area2D"]
 
 [node name="Jammed-paper" type="Sprite2D" parent="."]
-scale = Vector2(0.167247, 0.167247)
 texture = ExtResource("1_85yaw")
