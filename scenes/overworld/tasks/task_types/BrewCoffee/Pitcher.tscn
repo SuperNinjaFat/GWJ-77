@@ -24,7 +24,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66te1"]
-size = Vector2(40, 81)
+size = Vector2(85, 98)
 
 [node name="Pitcher" type="CharacterBody2D"]
 input_pickable = true
@@ -36,7 +36,7 @@ sprite_frames = SubResource("SpriteFrames_u4s8w")
 animation = &"empty"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
+position = Vector2(14.5, 0)
 shape = SubResource("RectangleShape2D_66te1")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

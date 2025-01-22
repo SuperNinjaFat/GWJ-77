@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dakvm0pemxstq"]
+
+[ext_resource type="Texture2D" uid="uid://c56g8x05juw3t" path="res://assets/models/office/resources/break_chair/tex_break_chair_BaseColor.png" id="1_g6q1g"]
+[ext_resource type="Texture2D" uid="uid://ddqdns483h5sr" path="res://assets/models/office/resources/break_chair/tex_break_chair_MRA.png" id="2_n1lt2"]
+[ext_resource type="Texture2D" uid="uid://cjl3cff7xyrkp" path="res://assets/models/office/resources/break_chair/tex_break_chair_Normal.png" id="3_io46e"]
+
+[resource]
+albedo_texture = ExtResource("1_g6q1g")
+metallic = 1.0
+metallic_texture = ExtResource("2_n1lt2")
+roughness_texture = ExtResource("2_n1lt2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_io46e")
+ao_enabled = true
+ao_texture = ExtResource("2_n1lt2")
+ao_texture_channel = 2

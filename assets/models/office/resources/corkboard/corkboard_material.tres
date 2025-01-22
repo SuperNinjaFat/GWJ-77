@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b7byw5ws6ytjr"]
+
+[ext_resource type="Texture2D" uid="uid://dnerpkecgjwvr" path="res://assets/models/office/resources/corkboard/tex_corkboard_BaseColor.png" id="1_7herl"]
+[ext_resource type="Texture2D" uid="uid://6dkq4l5mr1l3" path="res://assets/models/office/resources/corkboard/tex_corkboard_MRA.png" id="2_u2aih"]
+
+[resource]
+albedo_texture = ExtResource("1_7herl")
+metallic = 1.0
+metallic_texture = ExtResource("2_u2aih")
+roughness_texture = ExtResource("2_u2aih")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_u2aih")
+ao_texture_channel = 2

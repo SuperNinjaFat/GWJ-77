@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcq8furnonwy3"]
+
+[ext_resource type="SpriteFrames" uid="uid://cw1mgi4p64y3n" path="res://assets/sprites/NPCS/weevil_animation.tres" id="1_oppxb"]
+
+[node name="CoworkerNormalWeevil" type="AnimatedSprite3D"]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.897396, 0)
+billboard = 2
+sprite_frames = ExtResource("1_oppxb")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.111642

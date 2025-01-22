@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lim6nbuh4lv0"]
+
+[ext_resource type="Material" uid="uid://b04g2wwg7p0bc" path="res://assets/models/office/resources/desk_boss/desk_boss_material.tres" id="1_yv6ss"]
+[ext_resource type="ArrayMesh" uid="uid://bcdthg56rivc8" path="res://assets/models/office/resources/desk_boss/desk_boss.obj" id="2_nd23j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_okphn"]
+size = Vector3(2.66553, 0.884338, 1)
+
+[node name="DeskBoss" type="MeshInstance3D"]
+material_override = ExtResource("1_yv6ss")
+mesh = ExtResource("2_nd23j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00854492, 0.446625, 0)
+shape = SubResource("BoxShape3D_okphn")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bih8ikswely56"]
+
+[ext_resource type="Texture2D" uid="uid://fp38vg60es3s" path="res://assets/sprites/Office/Sheet_3.png" id="1_l1n8f"]
+
+[node name="Stapler" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -1.0
+texture = ExtResource("1_l1n8f")
+region_enabled = true
+region_rect = Rect2(83.7506, 54.8527, 402.295, 174.168)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://daphsbahkn1v3"]
+
+[ext_resource type="Texture2D" uid="uid://c4hftdulbniap" path="res://assets/sprites/Office/Sheet_2.png" id="1_8r3le"]
+[ext_resource type="PackedScene" uid="uid://qxfxlfuesrt7" path="res://assets/sprites/Office/PostIt_2.tscn" id="2_g74nh"]
+[ext_resource type="PackedScene" uid="uid://c3o6ktc0twbm3" path="res://assets/sprites/Office/PostIt_4.tscn" id="3_23v57"]
+
+[node name="PostIt_Bundle_1" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sorting_offset = -2.0
+texture = ExtResource("1_8r3le")
+region_enabled = true
+region_rect = Rect2(57.1675, 28.6507, 203.864, 194.534)
+
+[node name="PostIt_2" parent="." instance=ExtResource("2_g74nh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.880471, -0.542296, -0.0667137)
+
+[node name="PostIt_4" parent="." instance=ExtResource("3_23v57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01219, -2.05333, -0.132381)
+sorting_offset = -3.0

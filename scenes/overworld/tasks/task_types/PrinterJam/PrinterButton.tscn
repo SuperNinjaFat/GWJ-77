@@ -5,5 +5,4 @@
 [node name="PrinterButton" type="Node2D"]
 
 [node name="Printer-button" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_clmqm")

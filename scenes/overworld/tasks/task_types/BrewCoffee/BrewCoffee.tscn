@@ -20,27 +20,26 @@ grow_vertical = 2
 script = ExtResource("1_pya5n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(641, 317)
-scale = Vector2(1.22881, 1.22881)
+position = Vector2(624, 425)
 texture = ExtResource("2_hwn25")
 
 [node name="Grounds" parent="." instance=ExtResource("7_87vbp")]
-position = Vector2(202, 321)
+position = Vector2(203, 300)
 
 [node name="Sink" parent="." instance=ExtResource("3_3do11")]
 position = Vector2(906, 335)
 
 [node name="CoffeeMaker" parent="." instance=ExtResource("4_7vriq")]
-position = Vector2(547, 313)
+position = Vector2(553, 290)
 
 [node name="Scoop" parent="." instance=ExtResource("3_b2c6r")]
 position = Vector2(336, 368)
 
 [node name="CoffeePot" parent="." instance=ExtResource("4_y4ohq")]
-position = Vector2(500, 338)
+position = Vector2(509, 313)
 
 [node name="Filter" parent="." instance=ExtResource("9_maq1o")]
-position = Vector2(732, 377)
+position = Vector2(714, 364)
 
 [node name="Pitcher" parent="." instance=ExtResource("5_ybp42")]
-position = Vector2(1070, 372)
+position = Vector2(1071, 335)
