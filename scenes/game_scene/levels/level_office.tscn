@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game_scene/levels/level_office.gd" id="1_4q1b5"]
 [ext_resource type="PackedScene" uid="uid://b0w4cgq4at4oo" path="res://scenes/overworld/OverworldPlayer.tscn" id="2_0tn4t"]
 [ext_resource type="PackedScene" uid="uid://dgux4m470l2eu" path="res://scenes/overworld/tasks/TaskPoint.tscn" id="4_yqhrv"]
-[ext_resource type="PackedScene" uid="uid://bwas1ppnasge" path="res://scenes/game_scene/levels/office_level_geometry.tscn" id="5_af2n0"]
+[ext_resource type="PackedScene" uid="uid://bwas1ppnasge" path="res://scenes/game_scene/office_level_geometry.tscn" id="5_af2n0"]
 [ext_resource type="AudioStream" uid="uid://bkqo7hlbgdcv8" path="res://assets/audio/music/GWJ77 Overworld.mp3" id="5_vrd4i"]
 
 [node name="Office" type="Node3D"]
