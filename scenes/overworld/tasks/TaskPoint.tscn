@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgux4m470l2eu"]
+[gd_scene load_steps=3 format=3 uid="uid://dgux4m470l2eu"]
 
 [ext_resource type="Script" path="res://scenes/overworld/tasks/task_point.gd" id="1_d4n1x"]
 [ext_resource type="Texture2D" uid="uid://xun8l10gt2s" path="res://scenes/overworld/tasks/waterbucket.png" id="2_17ism"]
-[ext_resource type="PackedScene" uid="uid://b4bix4yrb4qat" path="res://scenes/overworld/interaction/interaction_area/InteractionArea.tscn" id="3_ckfnp"]
 
 [node name="TaskPoint" type="Node3D" groups=["task_point"]]
 script = ExtResource("1_d4n1x")
@@ -11,9 +10,6 @@ script = ExtResource("1_d4n1x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 billboard = 2
 texture = ExtResource("2_17ism")
-
-[node name="InteractionArea" parent="." node_paths=PackedStringArray("label") instance=ExtResource("3_ckfnp")]
-label = NodePath("../Label3D")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5995, 0)

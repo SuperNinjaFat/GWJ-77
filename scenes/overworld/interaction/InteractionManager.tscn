@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ok17lqqx7ic"]
-
-[ext_resource type="Script" path="res://scenes/overworld/interaction/interaction_manager.gd" id="1_ps8hb"]
-
-[node name="InteractionManager" type="Node3D"]
-script = ExtResource("1_ps8hb")
