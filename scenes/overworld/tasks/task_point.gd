@@ -9,3 +9,9 @@ extends Node3D
 
 func set_debug_color(color):
 	$Sprite3D.modulate = color
+
+## Used when marking a task as completed, but potentially could be used for other scenarios
+func disableInteraction():
+	InteractionManager.unregister_area($InteractionArea)
+	$InteractionArea.enabled = false
+	$Sprite3D.modulate = Color.BLACK

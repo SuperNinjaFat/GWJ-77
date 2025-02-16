@@ -7,17 +7,14 @@ var interact: Callable = func(_params):
 
 var enabled: bool = false
 
-func is_player_leave_or_exit(body: Node3D):
-	return !enabled or !body.is_in_group("player")
-
-func _on_body_entered(body: Node3D) -> void:
-	if is_player_leave_or_exit(body):
+func _on_body_entered(_body: Node3D) -> void:
+	if !enabled:
 		return
 	# print("Player entered ", self, ": ", body)
 	InteractionManager.register_area(self)
 
-func _on_body_exited(body: Node3D) -> void:
-	if is_player_leave_or_exit(body):
+func _on_body_exited(_body: Node3D) -> void:
+	if !enabled:
 		return
 	# print("Player left ", self, ": ", body)
 	InteractionManager.unregister_area(self)

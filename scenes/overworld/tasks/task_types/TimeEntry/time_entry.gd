@@ -15,4 +15,5 @@ func _on_interact(index):
 
 func complete():
 	completed = true
+	_points[0].disableInteraction()
 	TaskManager.remove_ui()
