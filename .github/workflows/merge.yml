@@ -1,0 +1,23 @@
+name: Merge to release branch
+description: A workflow for handling merging to release branches, such as main or a version branch.
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  merge_to_main:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify discord
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          color: "#ffeb33"
+          text: "Merged #${{ github.event.pull_request.number }} into `${{ github.base_ref }}`: `${{ github.event.pull_request.title }}`"
+          description: ${{ github.event.pull_request.body }}
+          details: "Full details here: ${{ github.event.pull_request.url }}"
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
