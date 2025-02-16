@@ -18,6 +18,6 @@ jobs:
           severity: info
           color: "#ffeb33"
           text: "Merged #${{ github.event.pull_request.number }} into `${{ github.base_ref }}`: `${{ github.event.pull_request.title }}`"
-          description: ${{ github.event.pull_request.comments }}
+          description: ${{ github.event.pull_request.body }}
           details: "Full details here: ${{ github.event.pull_request.url }}"
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
