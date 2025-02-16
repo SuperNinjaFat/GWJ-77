@@ -22,8 +22,8 @@ func _on_body_exited(body: Node3D) -> void:
 	# print("Player left ", self, ": ", body)
 	InteractionManager.unregister_area(self)
 
-# TODO: Change button character based on what control scheme currently in use
-const button_text = "[E]"
+# TODO: See if we can set this also for a signal when inputs are changed
+var button_text = "[" + "/".join(PackedStringArray(InputMap.action_get_events("interact").map(func(action_event): return InputEventHelper.get_text(action_event)))) + "]"
 
 @export var action_name: String = "interact"
 @onready var label: Label3D = $Label3D
