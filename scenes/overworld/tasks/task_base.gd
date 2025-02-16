@@ -15,8 +15,10 @@ func _init(points: Array[TaskPoint]):
 		if !interaction_area:
 			push_error("Couln't initialize interaction area")
 			return
+		# print("Initialized interaction area ", interaction_area.name)
 		interaction_area.interact = Callable(self, "_on_interact").bind(i)
 		interaction_area.enabled = true
+		interaction_area.set_label_text()
 		i += 1
 
 # Override

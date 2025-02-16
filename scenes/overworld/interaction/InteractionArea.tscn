@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt1j1ly0oe5j1"]
+
+[ext_resource type="Script" path="res://scenes/overworld/interaction/interaction_area.gd" id="1_1nvjc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jkg2e"]
+height = 4.94914
+radius = 2.31416
+
+[node name="InteractionArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_1nvjc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_jkg2e")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5995, 0)
+visible = false
+billboard = 1
+render_priority = 20
+text = "[E] to interact"
+font_size = 64
+vertical_alignment = 0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
